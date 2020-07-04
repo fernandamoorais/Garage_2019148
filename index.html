@@ -8,11 +8,21 @@
     <!--setting scale for mabile devices-->
     <title>Ger's Garage</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--Java Script library-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><!-- social media icons -->
     <link href="style.css" rel="stylesheet"><!-- style-->
+    <script>
+        $(document).ready(function(){
+          $("#home").click(function(){
+            $("a").slideToggle("slow");
+          });
+          $("#service").click(function(){
+            $("a").slideToggle("slow");
+          });
+        });
+        </script>
 
 </head>
 
@@ -30,10 +40,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav md-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href='***'>Home </a>
+                        <a class="nav-link" href="#home">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='nav-link"'>Service</a>
+                        <a class="nav-link" href="#service">Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='***'> About Us</a>
@@ -50,6 +60,7 @@
     </nav>
 
     <!--- Image Slider -->
+    <a id="home">
     <div id="slides" class="carousel slide" data-ride="carousel">
         <!--scroll function of carrosel/carousel indicators-->
         <ul class="carousel-indicators">
@@ -83,65 +94,68 @@
         </div>
     </div>
     <!--- Slogan -->
-    
-        <div id="slogan">
-            <img src="img/slogan.jpg" width="1500" height="300">
+
+    <div id="slogan">
+        <img src="img/slogan.jpg" width="1500" height="300">
+    </div>
+</a>
+
+
+    <!---Service Section -->
+    <a id="service">
+        <div class="container-fluid padding bg-dark text-white">
+            <div class="row service text-center">
+                <div class="col-12">
+                    <h1>Services</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Some introduction</p>
+                </div>
+            </div>
+</a>
+            <!--- Three Column Section/ first line -->
+            <div class="container-fluid padding">
+                <div class="row text-center padding">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <!--display adjustment -->
+
+                        <img src="img/major-repair-icon.jpg" width="180" height="150">
+                        <h3>MAJOR REPAIR</h3>
+                        <p> description</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src="img/major-service-icon.jpeg" width="200" height="150">
+                        <h3>MAJOR SERVICE</h3>
+                        <p> description</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src="img/paint icon.jpg" width="150" height="150">
+                        <h3>PAITING</h3>
+                        <p> description</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src="img/pick-icon.png" width="200" height="150">
+                        <h3>PICK UP</h3>
+                        <p> description</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src="img/anual-service-icon.jpg" width="150" height="150">
+                        <h3>ANNUAL SERVICE</h3>
+                        <p> description</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src="imG/repair-fault-icon.jpg" width="150" height="140">
+                        <h3>REPAIR AND FAULT</h3>
+                        <p> description</p>
+                    </div>
+                </div>
+                <hr class="my-4">
+            </div>
         </div>
     
 
-
-    <!--- Welcome Section -->
-    <div class="container-fluid padding bg-dark text-white">
-        <div class="row services text-center">
-            <div class="col-12">
-                <h1>Services</h1>
-            </div>
-            <hr>
-            <div class="col-12">
-                <p class="lead">Some introduction</p>
-            </div>
-        </div>
-
-        <!--- Three Column Section/ first line -->
-        <div class="container-fluid padding">
-            <div class="row text-center padding">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!--display adjustment -->
-
-                    <img src="img/major-repair-icon.jpg" width="180" height="150">
-                    <h3>MAJOR REPAIR</h3>
-                    <p> description</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src="img/major-service-icon.jpeg" width="200" height="150">
-                    <h3>MAJOR SERVICE</h3>
-                    <p> description</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src="img/paint icon.jpg" width="150" height="150">
-                    <h3>PAITING</h3>
-                    <p> description</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src="img/pick-icon.png" width="200" height="150">
-                    <h3>PICK UP</h3>
-                    <p> description</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src="img/anual-service-icon.jpg" width="150" height="150">
-                    <h3>ANNUAL SERVICE</h3>
-                    <p> description</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src="imG/repair-fault-icon.jpg" width="150" height="140">
-                    <h3>REPAIR AND FAULT</h3>
-                    <p> description</p>
-                </div>
-            </div>
-            <hr class="my-4">
-        </div>
-
-        <!--- Three Column Section/second line -->
+    <!--- Three Column Section/second line -->
 
 
-        <!--- Fixed background -->
+    <!--- Fixed background -->
