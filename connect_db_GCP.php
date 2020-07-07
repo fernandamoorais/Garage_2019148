@@ -1,13 +1,13 @@
 <?php
 //My previous code from CA2 - web develpment. 
-//Need to be edited to ger garages DB
+
 // Credentials
 $dbhost = '127.0.0.1:3306';
 $dbuser = 'root';
 $dbpass = '';
-$dbname = 'user_db';
+$dbname = 'Ger_garage';
 
-
+//Need to be edited to ger garages DB
 //Only for online 
 /*
 $dbhost = 'sql311.epizy.com';
