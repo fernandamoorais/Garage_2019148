@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" rel="stylesheet">
-    <link href= "css/newstyle.css" rel= "stylesheet" type="text/css"/>
-    <script type="text/javascript" src="java.js"></script><!-- style-->
+    <link href= "css/newstyle.css" rel= "stylesheet" type="text/css"/><!-- style-->
+    <script type="text/javascript" src="java.js"></script>
     <script>
         $(document).ready(function(){
           $("#home").click(function(){
