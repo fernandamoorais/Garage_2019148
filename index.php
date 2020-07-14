@@ -52,7 +52,7 @@
                     </li>
                 </ul>
                 <span class="navbar-nav ">
-                    <a class="nav-link" href='login.html'>Login</a>
+                    <a class="nav-link" href='booking.html'>Login</a>
                 </span>
             </div>
         </div>
