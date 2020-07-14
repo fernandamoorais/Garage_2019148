@@ -5,7 +5,7 @@
 $dbhost = '127.0.0.1:3306';
 $dbuser = 'root';
 $dbpass = '';
-$dbname = 'Ger_garage';
+$dbname = 'ger_garage';
 
 //Need to be edited to ger garages DB
 //Only for online 
@@ -18,7 +18,8 @@ $dbname = 'epiz_24967007_user_db';
 
 
 // 1. Create a database connection
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+//change this variables
+$connection = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
 
 // Check connection
 if (!$connection) {
