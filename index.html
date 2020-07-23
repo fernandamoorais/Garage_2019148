@@ -11,10 +11,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet" type="text/css" /><!-- style-->
-
-    <script type="text/javascript" src="java.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    
+    <script type="text/javascript" src="main.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.scrolly.min.js"></script>
     <script src="js/jquery.scrollex.min.js"></script>
@@ -33,25 +38,27 @@
             });
         });
     </script>
+ </head>   
     <!--ERRO: não esta indo devagar-->
     <!--ERRO: -->
 
-</head>
+
 
 <body>
     <!-- Navigation BAR -->
-    <!--centralizar menu-->
+    <!--ERRO:centralizar menu-->
+    <!--ERRO: fazer o slogan aparecer na nav bar/line 54 -->
 
     <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="***"><img scr="***"></a>-->
+           <!-- <a class="navbar-brand" ><img scr="img/sample.jpg"></a>-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav md-auto">
-                    <li class="nav-item active">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="#banner">Home </a>
                     </li>
                     <li class="nav-item">
@@ -66,10 +73,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href='#three'> Contact </a>
                     </li>
-                </ul>
-                <span class="navbar-nav ">
+                   <li class="navbar-nav">
                     <a class="nav-link" href='login.html'>Login</a>
-                </span>
+                  </li> 
+                </ul>
+                
             </div>
         </div>
     </nav>
@@ -218,7 +226,7 @@
     <!-- About Us -->
     <!--ERRO: imagem de background não esta aparecendo -->
     <!--ERRO: arrumar texto-->
-    <section id="two" class="wrapper post bg-img" data-bg="carrosel_1.jpg">
+    <section id="two" class="wrapper post bg-img">
         <div class="inner">
             <article class="box">
                 <header>
@@ -289,7 +297,7 @@
 
                                     <!--Google map-->
                                     <div class="Contact_us">
-                                        <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 30-34 Westmoreland St,
+                                        <p><i class="fas fa-map-pin"></i> 30-34 Westmoreland St,
                                             Dublin 2,
                                             <br>
                                             D02 HK35</p>
@@ -325,7 +333,7 @@
                 </div>
             </article>
         </div>
-        <a href="#four" class="more"></a>
+      
     </section>
    
     </body>
