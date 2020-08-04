@@ -6,7 +6,7 @@ include('../server.php');
 	header('location: ../login.php');
 }
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])) {n
 	session_destroy();
 	unset($_SESSION['user']);
 	header("location: ../login.php");
