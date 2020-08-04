@@ -1,158 +1,258 @@
-CREATE TABLE `Payment` (
-  `payment_ID` INTEGER,
-  `serv_ordem` INTEGER(15),
-  `payment_parts` DECIMAL(10,2),
-  `paymentt_serv` DECIMAL(10,2),
-  `payment_amount` DECIMAL(10,2),
-  `payment_date` DATE,
-  `other details` VARCHAR(300),
-  PRIMARY KEY (`payment_ID`),
-  KEY `FK` (`serv_ordem`),
-  KEY `Key` (`payment_parts`, `paymentt_serv`, `payment_amount`, `payment_date`, `other details`)
-);
+-
+-- Table structure for table `identify`
+--
 
-CREATE TABLE `Service` (
-  `serv_ordeR` INTEGER(15),
-  `service_ID` INTEGER(5),
-  `vehicle_license` VARCHAR(15),
-  `service_name` VARCHAR(15),
-  `price` NUMERIC(19,0),
-  `hours_serv` INTERGER(2),
-  `service_comments` VARCHAR(300),
-  PRIMARY KEY (`serv_ordeR`, `service_ID`),
-  KEY `FK` (`vehicle_license`),
-  KEY `Key` (`service_name`, `price`, `hours_serv`, `service_comments`)
-);
+CREATE TABLE `identify` (
+  `login_user_ID` int(10) DEFAULT NULL,
+  `login_staff_ID` int(4) DEFAULT NULL,
+  `login_adm_ID` int(4) DEFAULT NULL,
+  `password` varchar(70) DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `is_Login_adm_ID` enum('1','0') DEFAULT NULL,
+  `is_Login_user_ID` enum('1','0') DEFAULT NULL,
+  `is_Login_staff_ID` enum('1','0') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `Identify` (
-  `login_user_ID` INTEGER(10),
-  `login_staff_ID` INTEGER(4),
-  `login_adm_ID` INTEGER(4),
-  `password` VARCHAR(70),
-  `last_login` DATETIME,
-  `is_Login_adm_ID` ENUM('1','0'),
-  `is_Login_user_ID` ENUM('1','0'),
-  `is_Login_staff_ID` ENUM('1','0') ,
-  KEY `FK` (`login_user_ID`, `login_staff_ID`, `login_adm_ID`, `password`),
-  KEY `Key` (`last_login`, `is_Login_adm_ID`, `is_Login_user_ID`, `is_Login_staff_ID`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE `Product` (
-  `product_ID` INTEGER(5),
-  `reference` TiNYTEXT,
-  `name_part` VARCHAR(25),
-  `quantity` INTEGER,
-  `price` DECIMAL(10,2),
-  `stockable` BOOLEAN,
-  PRIMARY KEY (`product_ID`),
-  KEY `Key` (`reference`, `name_part`, `quantity`, `price`, `stockable`)
-);
+--
+-- Table structure for table `payment`
+--
 
-CREATE TABLE `User` (
-  `password` VARCHAR(70),
-  `login_user_ID` INTEGER(10),
-  `e-mail` VARCHAR(100),
-  `first_name` VARCHAR(15),
-  `last_name` VARCHAR(30),
-  `phone[0]: phoneNumber (phoneType) (number)` VARCHAR(30),
-  `DOB` DATE,
-  `adress_line1` VARCHAR(50),
-  `adress_line2` VARCHAR(50),
-  `post_code` VARCHAR(15),
-  PRIMARY KEY (`password`, `login_user_ID`),
-  KEY `Key` (`e-mail`, `first_name`, `last_name`, `phone[0]: phoneNumber (phoneType) (number)`, `DOB`, `adress_line1`, `adress_line2`, `post_code`)
-);
+CREATE TABLE `payment` (
+  `payment_ID` int(11) NOT NULL,
+  `serv_ordem` int(15) DEFAULT NULL,
+  `payment_parts` decimal(10,2) DEFAULT NULL,
+  `paymentt_serv` decimal(10,2) DEFAULT NULL,
+  `payment_amount` decimal(10,2) DEFAULT NULL,
+  `payment_date` date DEFAULT NULL,
+  `other details` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `Staff` (
-  `e-mail` VARCHAR(100),
-  `login_staff_ID` INTEGER(10),
-  `first_name` VARCHAR(15),
-  `last_name` VARCHAR(30),
-  `DOB` DATE,
-  `start_date` DATE,
-  `end_date` DATE,
-  `role` VARCHAR(15),
-  `salary` NUMERIC(19,0),
-  `daily_hours` INTEGER,
-  PRIMARY KEY (`e-mail`, `login_staff_ID`),
-  KEY `Key` (`first_name`, `last_name`, `DOB`, `start_date`, `end_date`, `role`, `salary`, `daily_hours`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE `ADM` (
-  `login_staff_ID` INTEGER(4),
-  `password` VARCHAR(70),
-  `e-mail` VARCHAR(100),
-  PRIMARY KEY (`login_staff_ID`, `password`),
-  KEY `Key` (`e-mail`)
-);
+--
+-- Table structure for table `product`
+--
 
-CREATE TABLE `Supplier` (
-  `supplier_ID` INTEGER,
-  `supplier_name` VARCHAR(45),
-  `supplier_phone` INTEGER,
-  `supplier_info` VARCHAR(200),
-  PRIMARY KEY (`supplier_ID`),
-  KEY `Key` (`supplier_name`, `supplier_phone`, `supplier_info`)
-);
+CREATE TABLE `product` (
+  `product_ID` int(5) NOT NULL,
+  `reference` tinytext DEFAULT NULL,
+  `name_part` varchar(25) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `stockable` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `Product_order` (
-  `product_ID` INTEGER,
-  `serv_order` INTEGER,
-  `quantity` INTEGER,
-  `price` DECIMAL(10,2),
-  `ordered_at` DATETIME,
-  KEY `FK` (`product_ID`, `serv_order`),
-  KEY `Key` (`quantity`, `price`, `ordered_at`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE `Supplying` (
-  `suppllier_ID` INTEGER,
-  `product_ID` INTEGER,
-  `quantity` INTEGER,
-  `price` DECIMAL(10,2),
-  `ordered_at` DATATIME,
-  `arrives_at` DATATIME,
-  `arrived` BOOLEAN,
-  KEY `FK` (`suppllier_ID`, `product_ID`),
-  KEY `Key` (`quantity`, `price`, `ordered_at`, `arrives_at`, `arrived`)
-);
+--
+-- Table structure for table `product_order`
+--
 
-CREATE TABLE `Vehicle` (
-  `vehicle_lincense` VARCHAR(15),
-  `login_user_ID` INTEGER(10),
-  `vehicle_type` VARCHAR(15),
-  `vehicle_year` DATE,
-  `vehicle_color` VARCHAR(10),
-  `vehicle_engine` VARCHAR(15),
-  `vehicle_make` VARCHAR(25),
-  PRIMARY KEY (`vehicle_lincense`),
-  KEY `FK` (`login_user_ID`),
-  KEY `Key` (`vehicle_type`, `vehicle_year`, `vehicle_color`, `vehicle_engine`, `vehicle_make`)
-);
+CREATE TABLE `product_order` (
+  `product_ID` int(11) DEFAULT NULL,
+  `serv_order` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `ordered_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `Ref_Booking _Status` (
-  `status` VARCHAR(15),
-  `status_description` VARCHAR(100),
-  PRIMARY KEY (`status`),
-  KEY `Key` (`status_description`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE `Stock` (
-  `stock_ID` INTEGER,
-  `product_id` INTEGER,
-  `quantity` INTEGER,
-  `update_at` DATETIME,
-  PRIMARY KEY (`stock_ID`, `product_id`),
-  KEY `Key` (`quantity`, `update_at`)
-);
+--
+-- Table structure for table `ref_booking _status`
+--
 
-CREATE TABLE `Booking` (
-  `booking_ID` INT,
-  `status` VARCHAR(15),
-  `booking_date` DATE,
-  `other _details` VARCHAR(100),
-  PRIMARY KEY (`booking_ID`),
-  KEY `FK` (`status`),
-  KEY `Key` (`booking_date`, `other _details`)
-);
+CREATE TABLE `ref_booking _status` (
+  `status` varchar(15) NOT NULL,
+  `status_description` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service`
+--
+
+CREATE TABLE `service` (
+  `serv_ordeR` int(15) NOT NULL,
+  `service_ID` int(5) NOT NULL,
+  `vehicle_license` varchar(15) DEFAULT NULL,
+  `service_name` varchar(15) DEFAULT NULL,
+  `price` decimal(19,0) DEFAULT NULL,
+  `hours_serv` int(2) DEFAULT NULL,
+  `service_comments` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stock`
+--
+
+CREATE TABLE `stock` (
+  `stock_ID` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `supplier_ID` int(11) NOT NULL,
+  `supplier_name` varchar(45) DEFAULT NULL,
+  `supplier_phone` int(11) DEFAULT NULL,
+  `supplier_info` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplying`
+--
+
+CREATE TABLE `supplying` (
+  `suppllier_ID` int(11) DEFAULT NULL,
+  `product_ID` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `ordered_at` datetime DEFAULT NULL,
+  `arrives_at` datetime DEFAULT NULL,
+  `arrived` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `first_name` varchar(15) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `adress_line1` varchar(50) DEFAULT NULL,
+  `adress_line2` varchar(50) DEFAULT NULL,
+  `password` varchar(70) DEFAULT NULL,
+  `password2` varchar(70) DEFAULT NULL,
+  `login_user_ID` int(10) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `phoneNumber` varchar(30) DEFAULT NULL,
+  `post_code` varchar(15) DEFAULT NULL,
+  `user_type` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle`
+--
+
+CREATE TABLE `vehicle` (
+  `vehicle_lincense` varchar(15) NOT NULL,
+  `login_user_ID` int(10) DEFAULT NULL,
+  `vehicle_type` varchar(15) DEFAULT NULL,
+  `vehicle_year` date DEFAULT NULL,
+  `vehicle_color` varchar(10) DEFAULT NULL,
+  `vehicle_engine` varchar(15) DEFAULT NULL,
+  `vehicle_make` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `adm`
+--
+ALTER TABLE `adm`
+  ADD PRIMARY KEY (`login_staff_ID`,`password`),
+  ADD KEY `Key` (`e-mail`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`booking_ID`),
+  ADD KEY `FK` (`status`),
+  ADD KEY `Key` (`booking_date`,`other _details`);
+
+--
+-- Indexes for table `identify`
+--
+ALTER TABLE `identify`
+  ADD KEY `FK` (`login_user_ID`,`login_staff_ID`,`login_adm_ID`,`password`),
+  ADD KEY `Key` (`last_login`,`is_Login_adm_ID`,`is_Login_user_ID`,`is_Login_staff_ID`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_ID`),
+  ADD KEY `FK` (`serv_ordem`),
+  ADD KEY `Key` (`payment_parts`,`paymentt_serv`,`payment_amount`,`payment_date`,`other details`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`product_ID`),
+  ADD KEY `Key` (`reference`(255),`name_part`,`quantity`,`price`,`stockable`);
+
+--
+-- Indexes for table `product_order`
+--
+ALTER TABLE `product_order`
+  ADD KEY `FK` (`product_ID`,`serv_order`),
+  ADD KEY `Key` (`quantity`,`price`,`ordered_at`);
+
+--
+-- Indexes for table `ref_booking _status`
+--
+ALTER TABLE `ref_booking _status`
+  ADD PRIMARY KEY (`status`),
+  ADD KEY `Key` (`status_description`);
+
+--
+-- Indexes for table `service`
+--
+ALTER TABLE `service`
+  ADD PRIMARY KEY (`serv_ordeR`,`service_ID`),
+  ADD KEY `FK` (`vehicle_license`),
+  ADD KEY `Key` (`service_name`,`price`,`hours_serv`,`service_comments`);
+
+--
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`stock_ID`,`product_id`),
+  ADD KEY `Key` (`quantity`,`update_at`);
+
+--
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`supplier_ID`),
+  ADD KEY `Key` (`supplier_name`,`supplier_phone`,`supplier_info`);
+
+--
+-- Indexes for table `supplying`
+--
+ALTER TABLE `supplying`
+  ADD KEY `FK` (`suppllier_ID`,`product_ID`),
+  ADD KEY `Key` (`quantity`,`price`,`ordered_at`,`arrives_at`,`arrived`);
+
+--
+-- Indexes for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`vehicle_lincense`),
+  ADD KEY `FK` (`login_user_ID`),
+  ADD KEY `Key` (`vehicle_type`,`vehicle_year`,`vehicle_color`,`vehicle_engine`,`vehicle_make`);
