@@ -1,8 +1,12 @@
-<!--<?php
-//Control condition that juts turns the tab booking avalible after the user Login 
-$controlPag = "3";
-include("verification.php");
-?>-->
+<?php
+
+include('server.php');
+/*if (!isLoggedIn()) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');
+}*/
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,9 +60,7 @@ include("verification.php");
                         <a class="nav-link" href='#contact'> Contact </a>
                     </li>
                 </ul>
-                <span class="navbar-nav ">
-                    <a class="nav-link" href='login.html'>Login</a>
-                </span>
+               <i class="fad fa-sign-out-alt"></i>
             </div>
         </div>
     </nav>
@@ -68,6 +70,13 @@ include("verification.php");
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
 <body>
+<section>
+<?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['Username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: green;">logout</a> </p>
+    <?php endif ?>
+</section>
+
     <div class="navbar navbar-fixed-top navbar-default">
         <div class="container">
             <div class="navbar-header">
