@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+/* SERVICE CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns */
+.service .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .service h2 {
+    font-weight: 400;
+  }
+  .service .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
