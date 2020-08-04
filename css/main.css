@@ -3382,6 +3382,24 @@
   }
 /*///////////SEACRH BAR/////////////*/
 
+/***********************REGISTATION TAB****************************************/
+.btn-primary{
+background: rgb(13,50,76);
+background: -moz-linear-gradient(left, rgb(13,50,76) 0%, rgb(35,136,203) 50%, rgb(13,50,76) 100%);
+background: -webkit-linear-gradient(left, rgb(13,50,76) 0%, rgb(35,136,203) 50%, rgb(13,50,76) 100%);
+background: linear-gradient(to right, rgb(13,50,76) 0%, rgb(35,136,203) 50%, rgb(13,50,76) 100%);
+}
+
+/**************CREATE_USER.PHP**************/
+#user_type {
+	height: 40px;
+	width: 98%;
+	padding: 5px 10px;
+	background: white;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
 /* Flex 
 
 	.flex {
