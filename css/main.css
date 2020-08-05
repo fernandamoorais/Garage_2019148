@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------SERVICE CONTENT----------------------------------------- */
 
 /* Center align the text within the three columns */
+.service{
+    background-color:#1f262a;
+    float: left;
+}
 .service .col-md-4 {
     margin-bottom: 1.5rem;
     text-align: justify;
@@ -51,7 +55,20 @@ h1, h2, h3, h4, h5, h6 {
     
   }
 
-  
+.service.box{
+    padding:60px 0px;
+    float: left;
+    border-radius: 18px;
+}
+
+.service.box-part{
+   
+    background: #f8f8ff;;
+    border-radius: 18px;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+
   /*------------------------------------------------------Contact us CONTENT------------------------------------ */
  .contact{
     background-color:#C5C1C0  ;
@@ -60,16 +77,14 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
   }
 
-span{
-    font-size:15px;
-}
+
 
 .box{
     padding:60px 0px;
 }
 
 .box-part{
-    background: #c0b3a0;;
+    background: #e6dfd6;;
     border-radius:0;
     padding:60px 10px;
     margin:30px 0px;
