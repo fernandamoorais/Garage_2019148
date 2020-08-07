@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--setting scale for mabile devices-->
     <title>Ger's Garage</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css" /><!-- style-->
-    <link href="css/fontawesome.css" rel="stylesheet" type="text/css" /><!-- style-->
-    <link href="fonts/fontawesome.css" rel="stylesheet" type="text/css" /><!-- style-->
-    <link href="fonts/regular.css" rel="stylesheet" type="text/css" /><!-- style-->
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <!-- style-->
+    <link href="css/fontawesome.css" rel="stylesheet" type="text/css">
+    <!--style-->
+    <link href="fonts/fontawesome.css" rel="stylesheet" type="text/css">
+    <!-- style-->
+    <link href="fonts/regular.css" rel="stylesheet" type="text/css">
+    <!-- style-->
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -19,6 +23,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.jss"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -29,114 +36,196 @@
         <div class="container-fluid">
             <!-- <a class="navbar-brand" ><img scr="img/sample.jpg"></a>-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
             <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Home </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="services.html">Service</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href='#'> News</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='!'> About Us</a>
+                        <a class="nav-link" href='us.html'> About Us</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href='contact.html'> Contact </a>
                     </li>
 
-                    <!--BEFPRE LOGIN-->
-                    <li class="navbar-nav">
-                        <a class="nav-link" href='login.html'>Book our services</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href='login.html'>Book a service</a>
                     </li>
 
-                   
+                    <!--acesso somente depois de logar  LOGIN-->
+                    <li class="navbar-nav">
+                        <a class="nav-link" href='booking.html'>Book our services</a>
+                    </li>
+
+                    <li class="navbar-nav">
+                        <a class="nav-link" href='profile.html'>Profile</a>
+                    </li>
+
+
                 </ul>
 
             </div>
         </div>
     </nav>
-    
-    <div class="regis">
-        <h1 class="mb-3">Registration</h1>
-        <form class="needs-validation" novalidate>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="first_name">First name</label>
-              <input type="text" class="form-control" id="first_name" placeholder="First Name" value="" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="second_name">Last name</label>
-              <input type="text" class="form-control" id="second_ame" placeholder="Last Name" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-          </div>
-  
-          <div class="mb-3">
-            <label for="username">Username</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">@</span>
-              </div>
-              <input type="text" class="form-control" id="username" placeholder="Username" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Your username is required.
-              </div>
-            </div>
-          </div>
-  
-          <div class="mb-3">
-            <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
-            <div class="invalid-feedback">
-              Please enter a valid email address for shipping updates.
-            </div>
-          </div>
-    
-        <div class="mb-3">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-          </div>
-  
-          <div class="mb-3">
-            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-          </div>
-  
-          <div class="row">
-            <div class="col-md-5 mb-3">
-              <label for="county">Country</label>
-              <input type="text" class="form-control" id="county" placeholder="Apartment or suite">
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-           
-            <div class="col-md-3 mb-3">
-              <label for="post_code">Zip</label>
-              <input type="text" class="form-control" id="post_code" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
-          <hr class="mb-4">
-          <button type="submit" class="btn btn btn-block" name='register_btn'>Register</button>
-  
+    <!-- multistep form -->
+    <div class="registration">
+        <form id="msform">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Account Setup</li>
+                <li>Personal Details</li>
+                <li> Car Details</li>
+            </ul>
 
+            <fieldset>
+                <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle"></h3>
+                <input type="text" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password2" placeholder="Confirm Password">
+
+                <input type="button" name="next" class="next action-button" value="Next">
+
+
+            </fieldset>
+            <!--./fieldsets CREATE ACCOUNT-->
+
+            <fieldset>
+                <h2 class="fs-title">Personal Details</h2>
+                <h3 class="fs-subtitle"> </h3>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="second_name" placeholder="Last Name">
+                <input type="text" name="address" placeholder="Address line1">
+                <input type="text" name="address2" placeholder="Address line2 (optional)">
+                <input type="text" name="phone" placeholder="Phone">
+                <input type="text" name="post_code" placeholder="eircode">
+                <div class="DOB">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+
+                </div>
+                <textarea name="info" placeholder="info"></textarea>
+                <div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </div>
+            </fieldset>
+            <!--fieldsets PERSONAL DETAILS-->
+
+            <fieldset>
+
+                <div>
+                    <h2 class="fs-title">Car details Details</h2>
+                    <h3 class="fs-subtitle">You can do this step later </h3>
+
+                    <input type="text" name="vehicle_license" placeholder="Vehicle license ">
+                    <input type="text" name="vehicle_year" placeholder="Year">
+                    <input type="text" name="vehicle_color" placeholder="Color">
+                    <input type="text" name="vehicle_model" placeholder="Model">
+
+                </div>
+
+
+                <header class="mb-3">Type of car:</header>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="car" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="car">car</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="motobike" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="motobike">Motobike</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="van" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="van">Small van</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="bus" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="bus">Small bus</label>
+                    </div>
+                </div>
+                <!--./mb-3-->
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <label for="vehicle_make">Make</label>
+                        <select class="custom-select d-block w-100" id="manufacture" required>
+              <option value="">Choose...</option>
+              <option>Volkswagen</option>
+              <option>Toyota</option>
+              <option>Kia</option>
+              <option>Ford motors</option>
+              <option>General Motors</option>
+              <option>Honda</option>
+              <option>BMW</option>
+              <option>Nissan</option>
+              <option>Hyndai</option>
+              <option>Peugeot</option>
+              <option>Renault</option>
+              <option>Citroën</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+              <option>Suzuki</option>
+              <option>Mitsubishi</option>
+              <option>Ducati</option>
+              <option>Honda</option>
+              <option>Harley Davidson</option>
+              <option>Alfa Romeo</option>
+              <option>Ferrari</option>
+              <option>Lamborghini</option>
+              <option>Land Rover</option>
+              <option>Mini</option>
+              <option>Lexus</option>
+              <option>Rolls-Royce</option>
+              <option>SAAB</option>
+              <option>Yamaha</option>
+              <option>Dafra</option>
+              <option>Others...</option>
+            </select>
+                    </div>
+                    <!---./col-md-6"-->
+
+                    <div class="col-md-6">
+                        <label for="vehicle_type">Engine type</label>
+                        <select class="custom-select d-block w-100" id="vehicle_type" required>
+              <option value="">Choose...</option>
+              <option>Petrol</option>
+              <option>Diesel</option>
+              <option>Eletric</option>
+              <option>Hybrid</option>
+            </select>
+                    </div>
+                    <!--col-md-6"--->
+
+                </div>
+                <!--row-->
+                <br>
+
+                <br>
+                <div class="adicional">
+                    <textarea name="address" placeholder="Adicional information "></textarea>
+                </div>
+                <!--./adicional-->
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                <button type="skip">Skip</button>
+            </fieldset>
+            <!--Car details-->
+
+        </form>
+    </div>
+    <!--registration-->
 </body>
+
 </html>
