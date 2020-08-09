@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--characther set -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--setting scale for mabile devices-->
+
+    <title>Ger's Garage</title>
+
+    <!-- style-->
+    <link href="fontawesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+    <div class="staff">
+        <h1>Personal information</h1>
+        <p>?php echo $staff_id</p>
+        <div class="staff_info">
+            <h2>email</h2><input type="text" name="email" placeholder="E-mail"></div>
+
+        <div class="staff_info">
+            <h2>First name</h2> <input type="text" name="first_name" placeholder="First Name"></div>
+        <div class="staff_info">
+            <h2>Surname</h2> <input type="text" name="second_name" placeholder="Last Name"></div>
+        <div class="staff_info">
+            <h2>Address</h2> <input type="text" name="address" placeholder="Address line 1"></div>
+        <div class="staff_info">
+            <h2>Address</h2> <input type="text" name="address2" placeholder="Address line 2 (optional)"></div>
+        <div class="staff_info">
+            <h2>Phone</h2><input type="text" name="phone" placeholder="Phone"></div>
+        <div class="staff_info">
+            <h2>Eircode</h2><input type="text" name="eircode" placeholder="eircode"></div>
+        <div class="staff_info">
+            <h2>Birthday</h2>
+            <div class="DOB">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+
+            </div>
+        </div>
+        <!--DOB-->
+        <div class="staff_info">
+            <h2>Start date</h2>
+            <p>?echo start_date</p>
+        </div>
+        <div class="staff_info">
+            <h2>Role</h2>
+            <p>?echo role</p>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
