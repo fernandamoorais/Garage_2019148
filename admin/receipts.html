@@ -7,385 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--setting scale for mabile devices-->
 
-    <title>Ger's Garage</title>
+    <title>Ger's Garage ADM</title>
 
     <!--ERROR: não ets ainportando -->
     <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
-
+    <link href="../css/admin.css" rel="stylesheet" type="text/css">
     <!-- style-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
 
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <style>
-
-    </style>
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
+    <div class="btn_return">
+        <button onclick="window.location.href='../admin/billing.html';">
+        Go back
+      </button>
 
-    <head>
-        <meta charset="utf-8">
-        <!--characther set -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--setting scale for mabile devices-->
+        <div class="btn_return">
+            <button>
+        Save invoice
+      </button>
 
-        <title>Ger's Garage</title>
-
-        <!--ERROR: não ets ainportando -->
-        <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
-
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
-
-        <!-- style-->
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <style>
-            /* reset */
-            
-            .invoice [contenteditable] {
-                border-radius: 0.25em;
-                min-width: 1em;
-                outline: 0;
-            }
-            
-            .invoice [contenteditable] {
-                cursor: pointer;
-            }
-            
-            .invoice contenteditable]:hover,
-            *[contenteditable]:focus,
-            td:hover *[contenteditable],
-            td:focus *[contenteditable],
-            img.hover {
-                background: #DEF;
-                box-shadow: 0 0 1em 0.5em #DEF;
-            }
-            
-            .invoice span[contenteditable] {
-                display: inline-block;
-            }
-            
-            .invoice {
-                /* page */
-                font: 16px/1 'Open Sans', sans-serif;
-                overflow: auto;
-                padding: 0.5in;
-                background: #999;
-                cursor: default;
-                box-sizing: border-box;
-                height: 11in;
-                margin: 0 auto;
-                overflow: hidden;
-                padding: 0.5in;
-                width: 8.5in;
-                background: #FFF;
-                border-radius: 1px;
-                box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
-            }
-            /* heading */
-            
-            .invoice h1 {
-                font: bold 100% sans-serif;
-                letter-spacing: 0.5em;
-                text-align: center;
-                text-transform: uppercase;
-            }
-            /* table */
-            
-            .invoice table {
-                font-size: 75%;
-                table-layout: fixed;
-                width: 100%;
-            }
-            
-            .invoice table {
-                border-collapse: separate;
-                border-spacing: 2px;
-            }
-            
-            .invoice th,
-            td {
-                border-width: 1px;
-                padding: 0.5em;
-                position: relative;
-                text-align: left;
-            }
-            
-            .invoice th,
-            td {
-                border-radius: 0.25em;
-                border-style: solid;
-            }
-            
-            .invoice th {
-                background: #EEE;
-                border-color: #BBB;
-            }
-            
-            .invoicetd {
-                border-color: #DDD;
-            }
-            /* header */
-            
-            header {
-                margin: 0 0 3em;
-            }
-            
-            header:after {
-                clear: both;
-                content: "";
-                display: table;
-            }
-            
-            header h1 {
-                background: #000;
-                border-radius: 0.25em;
-                color: #FFF;
-                margin: 0 0 1em;
-                padding: 0.5em 0;
-            }
-            
-            header address {
-                float: left;
-                font-size: 75%;
-                font-style: normal;
-                line-height: 1.25;
-                margin: 0 1em 1em 0;
-            }
-            
-            header address p {
-                margin: 0 0 0.25em;
-            }
-            
-            header span,
-            header img {
-                display: block;
-                float: right;
-            }
-            
-            header span {
-                margin: 0 0 1em 1em;
-                max-height: 25%;
-                max-width: 60%;
-                position: relative;
-            }
-            
-            header img {
-                max-height: 100%;
-                max-width: 100%;
-            }
-            
-            header input {
-                cursor: pointer;
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-                height: 100%;
-                left: 0;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                width: 100%;
-            }
-            /* article */
-            
-            article,
-            article address,
-            table.meta,
-            table.inventory {
-                margin: 0 0 3em;
-            }
-            
-            article:after {
-                clear: both;
-                content: "";
-                display: table;
-            }
-            
-            article h1 {
-                clip: rect(0 0 0 0);
-                position: absolute;
-            }
-            
-            article address {
-                float: left;
-                font-size: 125%;
-                font-weight: bold;
-            }
-            /* table meta & balance */
-            
-            table.meta,
-            table.balance {
-                float: right;
-                width: 36%;
-            }
-            
-            table.meta:after,
-            table.balance:after {
-                clear: both;
-                content: "";
-                display: table;
-            }
-            /* table meta */
-            
-            table.meta th {
-                width: 40%;
-            }
-            
-            table.meta td {
-                width: 60%;
-            }
-            /* table items */
-            
-            table.inventory {
-                clear: both;
-                width: 100%;
-            }
-            
-            table.inventory th {
-                font-weight: bold;
-                text-align: center;
-            }
-            
-            table.inventory td:nth-child(1) {
-                width: 26%;
-            }
-            
-            table.inventory td:nth-child(2) {
-                width: 38%;
-            }
-            
-            table.inventory td:nth-child(3) {
-                text-align: right;
-                width: 12%;
-            }
-            
-            table.inventory td:nth-child(4) {
-                text-align: right;
-                width: 12%;
-            }
-            
-            table.inventory td:nth-child(5) {
-                text-align: right;
-                width: 12%;
-            }
-            /* table balance */
-            
-            table.balance th,
-            table.balance td {
-                width: 50%;
-            }
-            
-            table.balance td {
-                text-align: right;
-            }
-            /* aside */
-            
-            aside h1 {
-                border: none;
-                border-width: 0 0 1px;
-                margin: 0 0 1em;
-            }
-            
-            aside h1 {
-                border-color: #999;
-                border-bottom-style: solid;
-            }
-            /* javascript */
-            
-            .add,
-            .cut {
-                border-width: 1px;
-                display: block;
-                font-size: .8rem;
-                padding: 0.25em 0.5em;
-                float: left;
-                text-align: center;
-                width: 0.6em;
-            }
-            
-            .add,
-            .cut {
-                background: #9AF;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                background-image: -moz-linear-gradient(#00ADEE 5%, #0078A5 100%);
-                background-image: -webkit-linear-gradient(#00ADEE 5%, #0078A5 100%);
-                border-radius: 0.5em;
-                border-color: #0076A3;
-                color: #FFF;
-                cursor: pointer;
-                font-weight: bold;
-                text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.333);
-            }
-            
-            .add {
-                margin: -2.5em 0 0;
-            }
-            
-            .add:hover {
-                background: #00ADEE;
-            }
-            
-            .cut {
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                left: -1.5em;
-            }
-            
-            .cut {
-                -webkit-transition: opacity 100ms ease-in;
-            }
-            
-            tr:hover .cut {
-                opacity: 1;
-            }
-            
-            @media print {
-                * {
-                    -webkit-print-color-adjust: exact;
-                }
-                html {
-                    background: none;
-                    padding: 0;
-                }
-                body {
-                    box-shadow: none;
-                    margin: 0;
-                }
-                span:empty {
-                    display: none;
-                }
-                .add,
-                .cut {
-                    display: none;
-                }
-            }
-            
-            @page {
-                margin: 0;
-            }
-        </style>
-    </head>
-
-    <body>
+        </div>
         <!--href: https://codepen.io/tjoen/pen/vCHfu-->
         <div class="invoice">
             <header>
@@ -397,11 +46,15 @@
 			</address>
 
             </header>
+            <!--./header-->
+
             <article>
                 <h1>Recipient</h1>
                 <address contenteditable>
-				<p>Some Company<br>c/o Some Guy</p>
+				<p>Ger's<br>Garage</p>
 			</address>
+                <!--logo at left-->
+
                 <table class="meta">
                     <tr>
                         <th><span contenteditable>Invoice #</span></th>
@@ -416,16 +69,30 @@
                         <td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
                     </tr>
                 </table>
+                <!--./meta-->
+
                 <table class="inventory">
                     <thead>
+
                         <tr>
-                            <th><span contenteditable>Item</span></th>
-                            <th><span contenteditable>Description</span></th>
+                            <th><span contenteditable>Item</span>
+                                <p>database: product_name</p>
+                            </th>
+                            <th><span contenteditable>Description</span>
+                                <p>product_descrition</p>
+                            </th>
                             <th><span contenteditable>Rate</span></th>
-                            <th><span contenteditable>Quantity</span></th>
-                            <th><span contenteditable>Price</span></th>
+                            <th><span contenteditable>Quantity</span>
+                                <p>product_quantity</p>
+                            </th>
+                            <th><span contenteditable>Price</span>
+                                <p>product_price</p>
+                            </th>
                         </tr>
+
                     </thead>
+                    <!--table header-->
+
                     <tbody>
                         <tr>
                             <td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
@@ -435,8 +102,55 @@
                             <td><span data-prefix>$</span><span>600.00</span></td>
                         </tr>
                     </tbody>
+                    <!--tbody-->
+
                 </table>
+                <!--inventory producst-->
+
                 <a class="add">+</a>
+                <!--add line to table-->
+
+                <br>
+
+                <table class="inventory">
+                    <thead>
+
+                        <tr>
+                            <th><span contenteditable>Item</span>
+                                <p>database: service_name</p>
+                            </th>
+                            <th><span contenteditable>Description</span>
+                                <p>service_comment</p>
+                            </th>
+                            <th><span contenteditable>Rate</span></th>
+                            <th><span contenteditable>Quantity</span>
+                                <p>service_quantity</p>
+                            </th>
+                            <th><span contenteditable>Price</span>
+                                <p>service_price</p>
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <!--./head-->
+
+                    <tbody>
+                        <tr>
+                            <td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
+                            <td><span contenteditable>Experience Review</span></td>
+                            <td><span data-prefix>$</span><span contenteditable>150.00</span></td>
+                            <td><span contenteditable>4</span></td>
+                            <td><span data-prefix>$</span><span>600.00</span></td>
+                        </tr>
+                    </tbody>
+                    <!--tbody-->
+
+                </table>
+                <!--inventory service-->
+
+                <a class="add">+</a>
+                <!--add line to table-->
+
                 <table class="balance">
                     <tr>
                         <th><span contenteditable>Total</span></th>
@@ -451,7 +165,11 @@
                         <td><span data-prefix>$</span><span>600.00</span></td>
                     </tr>
                 </table>
+                <!--balance-->
+
             </article>
+            <!--article-->
+
             <aside>
                 <h1><span contenteditable>Additional Notes</span></h1>
                 <div contenteditable>
@@ -459,6 +177,13 @@
                 </div>
             </aside>
         </div>
+        <!--./ivoice-->
+
+
+
+
+
+
         <!--/* Shivving (IE8 is not supported, but at least it won't look as awful)
 /* ========================================================================== */
 
@@ -698,6 +423,6 @@ function onContentLoad() {
 
 window.addEventListener && document.addEventListener('DOMContentLoaded', onContentLoad);
 -->
-    </body>
+</body>
 
-    </html>
+</html>
