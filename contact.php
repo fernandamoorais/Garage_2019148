@@ -134,9 +134,9 @@
                                 </p>
                             </div>
                             <div class="Contact_us">
-                                <p><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Monday: closed
-                                    <br> Tuesday - Thursday: 8am - 5pm
-                                    <br> Friday - Sunday: 8am - 7 pm
+                                <p><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Sunday: closed
+                                    <br> Monday - Wednesday: 8am - 5pm
+                                    <br> Thursday - Saturday: 8am - 7 pm
                                 </p>
                             </div>
 

@@ -1,3 +1,9 @@
+<?php include('../server.php');
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,38 +41,35 @@
             <input type="text" name="email" placeholder="E-mail" style="width: 78%;"></div>
 
         <div class="staff_info ">
-            <h2>First name</h2> <input type="text " name="first_name " placeholder="First Name " style="width: 78%;">
+            <h2>First name</h2> <input type="text " name="staff_name" placeholder="First Name " style="width: 78%;">
         </div>
         <div class="staff_info ">
-            <h2>Surname</h2> <input type="text " name="second_name " placeholder="Last Name" style="width: 78%;"></div>
+            <h2>Surname</h2> <input type="text " name="staff_second" placeholder="Last Name" style="width: 78%;"></div>
         <div class="staff_info ">
-            <h2>Address</h2> <input type="text " name="address " placeholder="Address line 1" style="width: 78%;"></div>
+            <h2>Address</h2> <input type="text " name="address" placeholder="Address line 1" style="width: 78%;"></div>
         <div class="staff_info ">
-            <h2>Address</h2> <input type="text " name="address2 " placeholder="Address line 2 (optional)" style="width: 78%;"></div>
-        <div class="staff_info ">
-            <h2>Phone</h2><input type="text " name="phone " placeholder="Phone"></div>
-        <div class="staff_info ">
-            <h2>Eircode</h2><input type="text " name="eircode " placeholder="eircode "></div>
-        <div class="staff_info ">
-            <h2>Birthday</h2>
-            <div class="DOB ">
-                <label for="birthday ">Birthday:</label>
-                <input type="date " id="birthday " name="birthday ">
+            <div class="staff_info ">
+                <h2>Phone</h2><input type="text " name="staff_phone" placeholder="Phone"></div>
+            <div class="staff_info ">
+                <h2>Birthday</h2>
+                <div class="DOB ">
+                    <label for="DOB ">Birthday:</label>
+                    <input type="date " id="birthday " name="birthday ">
 
+                </div>
             </div>
-        </div>
-        <!--DOB-->
-        <div class="staff_info ">
-            <h2>Start date</h2>
-            <p> start_date</p>
-        </div>
-        <div class="staff_info ">
-            <h2>Role</h2>
-            <p>role</p>
-        </div>
+            <!--DOB-->
+            <div class="staff_info ">
+                <h2>Start date</h2>
+                <p> from date</p>
+            </div>
+            <div class="staff_info ">
+                <h2>Role</h2>
+                <p>staff_type</p>
+            </div>
 
 
-    </div>
+        </div>
 </body>
 
 </html>

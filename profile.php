@@ -61,7 +61,14 @@
                     <i class="fa fa-cog"></i>
                 </a>
                 <!--.3-->
-
+                <a onclick="tabs(4)" class="tab">
+                    <i class="fa fa-calendar"></i>
+                </a>
+                <!--ERROS: .4realizar booking-->
+                <a onclick="tabs(5)" class="tab">
+                    <i class="fa fa-calendar"></i>
+                </a><!--ERRO VERIFICAR LAST RECEIPT-->
+                <!--.5-->
             </nav>
             <!--./profile-->
         </div>
@@ -205,8 +212,30 @@
 
             </div>
             <!--./account tabShow-->
+            <div class="booking tabShow">
+                <h1>Address information</h1>
+                <h2>Address</h2>
+                <input type="text" class="input" name="address">
+                <h2>Adress (optional)</h2>
+                <input type="text" class="input" name="address2">
+                <h2>Eircode</h2> <input type="text" class="input" name="eircode">
+                <h2>Adicional information</h2> <textarea class="input" name="info" placeholder="Adicional information"></textarea>
+                <div> <button class="bnt_update">Update</button></div>
 
+            </div>
+            <!--./ ERROR CREATE booking tabShow-->
+            <div class="invoice tabShow">
+                <h1>Address information</h1>
+                <h2>Address</h2>
+                <input type="text" class="input" name="address">
+                <h2>Adress (optional)</h2>
+                <input type="text" class="input" name="address2">
+                <h2>Eircode</h2> <input type="text" class="input" name="eircode">
+                <h2>Adicional information</h2> <textarea class="input" name="info" placeholder="Adicional information"></textarea>
+                <div> <button class="bnt_update">Update</button></div>
 
+            </div>
+            <!--./ ERROR CREATE invoice tabShow-->
 
 
         </div>

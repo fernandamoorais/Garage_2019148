@@ -21,26 +21,32 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <style>
-        table {
+        body {
+            background-color: rgba(0, 0, 0, 0.513);
+        }
+
+        .employee table {
             border: 6px solid #144d55f8;
-            ;
+            margin-top: 25px;
+            margin-right: 70px;
+            margin-bottom: 100px;
             background-color: #5ccfdff8;
             width: 100%;
             text-align: center;
         }
 
-        table td,
+        .employee table td,
         th {
             border: 1px solid #238b997c;
-            ;
+
             padding: 4px 4px;
         }
 
-        table tbody td {
+        .employee table tbody td {
             font-size: 16px;
         }
 
-        table th {
+        .employee table th {
             background: #238b997c;
             ;
             background: -moz-linear-gradient(top, #afa396 0%, #9e9081 66%, #948473 100%);
@@ -48,7 +54,7 @@
             background: linear-gradient(to bottom, #2fb7c87c 0%, #3ea8b6ab 66%, #238b997c 100%);
         }
 
-        table head th {
+        .employee table head th {
             font-size: 17px;
             font-weight: bold;
             color: #F0F0F0;
@@ -57,7 +63,7 @@
             ;
         }
 
-        table head th:first-child {
+        .employee table head th:first-child {
             border-left: none;
         }
 
@@ -72,6 +78,8 @@
             display: inline-block;
             font: normal bold 15px/20px 'Montserrat Alternates', sans-serif;
             text-align: center;
+            position: relative;
+
 
         }
 
@@ -93,7 +101,8 @@
             margin-right: 280px;
         }
 
-        section button.btn_staff {
+        button.btn_staff,
+        #popup button.btn_staff {
             margin-top: 30px;
             background: #ffffff;
             margin-bottom: 25px;
@@ -109,60 +118,71 @@
         }
 
         .new {
+            background-color: white;
 
             margin-left: 200px;
             margin-right: 280px;
             border: 1px solid #000000;
+            box-shadow: 3px 2px 2px 2px #444444;
+
         }
     </style>
 </head>
 
 <body>
+    <div class="row">
+        <div>
+            <button class="btn_staff" onclick="document.getElementById('popup').style.display='block'"> Create staff</button>
+        </div>
+        <div class="btn_return">
+            <button onclick="window.location.href='../admin/dashboard.html';">Go back </button>
+        </div>
 
+    </div>
     <section>
 
-        <button class="btn_staff" onclick="document.getElementById('popup').style.display='block'"> Create staff</button>
+
         <div id="popup">
 
             <form action="" method="post">
                 <div class="new" style="text-align: center;">
-
-                    <div class="staff_info">
-                        <h2>Email</h2>
-                        <input type="text" name="email" placeholder="E-mail" style="width: 78%;">
-                    </div>
-                    <!--email-->
-
                     <div class="staff_info">
                         <h2>ID</h2>
-                        <input type="text" name="staff_ID" placeholder="ID" style="width: 78%;">
+                        <input type="text" name="staff_ID" placeholder="ID" style="width: 50%;border-radius: 20px;height: 20px;">
                     </div>
                     <!---ID-->
 
                     <div class="staff_info">
+                        <h2>Email</h2>
+                        <input type="text" name="email" placeholder="E-mail" style="width: 78%;border-radius: 20px;height: 20px;">
+                    </div>
+                    <!--email-->
+
+
+                    <div class="staff_info">
                         <h2>Password</h2>
-                        <input type="text" name="password" placeholder="password" style="width: 78%;">
+                        <input type="text" name="password" placeholder="password" style="width: 78%;border-radius: 20px;height: 20px;">
                     </div>
                     <!--password-->
 
                     <div class="staff_info">
                         <h2>Confirm Password</h2>
-                        <input type="text" name="password2" placeholder="Confirm password" style="width: 78%;">
+                        <input type="text" name="password2" placeholder="Confirm password" style="width: 78%;border-radius: 20px;height: 20px;">
                     </div>
                     <!--./password2-->
 
                     <div class="staff_info ">
-                        <h2>First name</h2> <input type="text " name="staff_name" placeholder="First Name " style="width: 78%;">
+                        <h2>First name</h2> <input type="text " name="staff_name" placeholder="First Name" style="width: 78%;border-radius: 20px;height: 20px;">
                     </div>
                     <!--staff_name-->
 
                     <div class="staff_info ">
-                        <h2>Surname</h2> <input type="text " name="staff_second" placeholder="Last Name" style="width: 78%;">
+                        <h2>Surname</h2> <input type="text " name="staff_second" placeholder="Last Name" style="width: 78%;border-radius: 20px;height: 20px;">
                     </div>
                     <!--staff_secon-->
 
                     <div class="staff_info ">
-                        <h2>Address</h2> <input type="text " name="staff_address" placeholder="Address line 1" style="width: 78%;">
+                        <h2>Address</h2> <input type="text " name="staff_address" placeholder="Address line 1" style="width: 78%;border-radius: 20px;height: 20px;">
                     </div>
                     <!--staff_adress-->
 
@@ -178,25 +198,27 @@
                     <!--DOB-->
 
                     <div class="staff_info ">
-                        <h2>Phone</h2><input type="text" name="staff_phone" placeholder="Phone">
+                        <h2>Phone</h2><input type="text" name="staff_phone" placeholder="Phone" style="border-radius: 25px;height: 20px;">
                     </div>
                     <!--PHONe-->
 
 
+                    <div class=" row">
+                        <div class="staff_info ">
+                            <h2>Start date</h2> <input type="date" name="from_date" style="border-radius: 25px;height: 20px;">
+                        </div>
+                        <!--from date-->
 
-                    <div class="staff_info ">
-                        <h2>Start date</h2> <input type="date" name="from_date" style="width: 78%;">
+
+                        <div class=" column staff_info ">
+                            <h2>End date</h2> <input type="date" name="staff_second" style=" border-radius: 25px;height: 20px;">
+                        </div>
+                        <!--./end date-->
                     </div>
-                    <!--from date-->
-
-
-                    <div class="staff_info ">
-                        <h2>End date</h2> <input type="date" name="staff_second" style="width: 78%;">
-                    </div>
-                    <!--./end date-->
+                    <!--row-->
 
                     <h2>User type</h2>
-                    <div class="staff_info">
+                    <div class=" column staff_info" style="border-radius: 10px;height: 30px;">
                         <select id="user_type" name="staff_type" class="form-control">
                             <option value="1">user</option>
                             <option value="2">staff</option>
@@ -206,13 +228,14 @@
                     <!--user_type-->
 
 
-                    <div class="staff_info ">
+                    <div class="staff_info " style="border-radius: 25px;height: 30px;">
                         <h2>Salary</h2><input type="text" name="salary">
                     </div>
 
-                    <div class="staff_info ">
+                    <div class="staff_info " style="border-radius: 25px;height: 30px;">
                         <h2>Daily hourys</h2><input type="text" name="daily_hours" placeholder="">
                     </div>
+
                     <div>
 
                         <?php
@@ -256,9 +279,16 @@
                         }
 
                         ?>
+                        <div class="row">
+                            <div class="column">
+                                <input class="submit" name="submit" type="submit" value="Insert">
 
-                        <input class="submit" name="submit" type="submit" value="Insert">
-                        <button class="btn_staff" onclick="document.getElementById('popup').style.display='none'">Hide</button>
+                            </div>
+                            <div class="column"> 
+                                <button class="btn_staff" onclick="document.getElementById('popup').style.display='none'">Hide</button>
+                            </div>
+                        </div>
+                    </div>
             </form>
     </section>
     <!--./create new staff-->
@@ -279,32 +309,32 @@
             </form>
 
 
-                <?php
-                
-                $dbhost = 'localhost';
-                $dbuser = 'root';
-                $dbpass = '';
-                $dbname = 'ger_garage';
+            <?php
 
-                $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+            $dbhost = 'localhost';
+            $dbuser = 'root';
+            $dbpass = '';
+            $dbname = 'ger_garage';
 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $staff_ID = $_POST['staff_ID'];
-                    $sql = "SELECT *FROM staff WHERE staff_ID LIKE '$staff_ID'";
-                    $result = $connection->query($sql);
+            $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-                    if ($result === TRUE) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["staff_ID"] . "</td><td>" . $row["staff_email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["staff_name"] . "</td><td>" . $row["staff_second"] . "</td><td>" . $row["staff_address"] . "</td><td>" . $row["DOB"] . "</td><td>" . $row["staff_phone"] . "</td><td>" . $row["staff_phone"] . "</td><td>" . $row["from_date"] . "</td><td>" . $row["end_date"] . "</td><td>" . $row["staff_type"] . "</td><td>" . $row["salary"] . "</td><td>" . $row["daily_hours"] . "</td></tr>";
-                        }
-                        echo "</table>";
-                    } else {
-                        echo "0 result";
+            if (!empty($_REQUEST['staff_ID'])) {
+
+                $sql = "SELECT * FROM staff WHERE staff_ID LIKE '$staff_ID'";
+                $result = $connection->query($sql);
+
+                if ($result === TRUE) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr><td>" . $row["staff_ID"] . "</td><td>" . $row["staff_email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["staff_name"] . "</td><td>" . $row["staff_second"] . "</td><td>" . $row["staff_address"] . "</td><td>" . $row["DOB"] . "</td><td>" . $row["staff_phone"] . "</td><td>" . $row["staff_phone"] . "</td><td>" . $row["from_date"] . "</td><td>" . $row["end_date"] . "</td><td>" . $row["staff_type"] . "</td><td>" . $row["salary"] . "</td><td>" . $row["daily_hours"] . "</td></tr>";
                     }
-                    mysqli_close($connection);
+                    echo "</table>";
+                } else {
+                    echo "0 result";
                 }
+                mysqli_close($connection);
+            }
 
-                ?>
+            ?>
             <table>
                 <div style="text-align: center;">
                     <th>ID</th>
@@ -329,6 +359,7 @@
 
             </table>
             <!--./table staff-->
+        </div>
 
     </section>
     <!---./ staff list-->
