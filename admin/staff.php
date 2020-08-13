@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--ERROR: essa pagina pode somente ser acessada por admin
+aqui o admin pode criar staff
+update staff info
+-->
 <head>
     <meta charset="utf-8">
     <!--characther set -->
