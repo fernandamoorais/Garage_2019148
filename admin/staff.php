@@ -4,7 +4,7 @@
 aqui o admin pode criar staff
 update staff info
 ideia: alterar css deixar a tabela sempre visivel e após a pequisar exibir display only the result
--->
+arrumar diagramação da pagina-->
 <head>
     <meta charset="utf-8">
     <!--characther set -->
