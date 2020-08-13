@@ -3,6 +3,7 @@
 <!--ERROR: essa pagina pode somente ser acessada por admin
 aqui o admin pode criar staff
 update staff info
+ideia: alterar css deixar a tabela sempre visivel e após a pequisar exibir display only the result
 -->
 <head>
     <meta charset="utf-8">
