@@ -15,6 +15,8 @@ h6 {
 nav {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+nav:hoover{background-color:  #0000009f;
+color: black}
 
 
 /*-----------------------------------------------HOME CONTENT----------------------------------------------------*/
