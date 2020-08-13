@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--ERROR- ADICIONAR ANIMAÇÃO NAS LETRAS GER'S"
 <head>
     <meta charset="utf-8">
     <!--characther set -->
