@@ -12,12 +12,33 @@ h6 {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
-nav {
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 15px;
+body {
+    background-color: rgb(35, 35, 35);
 }
-nav:hoover{background-color:  #0000009f;
-color: black}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+nav {
+    font-size: 25px;
+}
+
+nav .nav-item a {
+    font-size: 25px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+nav .nav-item a.nav-link:hover {
+    background-color: #229797;
+    font-style: bold;
+    border-radius: 2px;
+}
 
 
 /*-----------------------------------------------HOME CONTENT----------------------------------------------------*/

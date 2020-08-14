@@ -88,42 +88,54 @@
 </head>
 
 <body>
+
+
     <!-- Navigation BAR -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
+
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" ><img scr="img/sample.jpg"></a>-->
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.html">Home </a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Service</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='us.html'> About Us</a>
+                        <a class="nav-link" href="services.php">Service</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='contact.html'> Contact </a>
+                        <a class="nav-link" href='us.php'> About Us</a>
                     </li>
 
-                    <!--BEFPRE LOGIN-->
-                    <li class="navbar-nav">
-                        <a class="nav-link" href='login.html'>Book our services</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href='contact.php'> Contact </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href='booking.php'>Book our services</a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href='profile.php'>Profile</a>
+                    </li>
+
+                    <li class=" nav-item">
+                        <a class="nav-link active" href='#'>Login/register</a>
+                    </li>
                 </ul>
 
             </div>
+            <!--collapse navbar-collapse justify-content-sm-center-->
         </div>
+        <!--container-fluid-->
     </nav>
+    <!--NavBar-->
 
 
     <div class="cotn_principal">

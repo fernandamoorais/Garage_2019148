@@ -2,7 +2,7 @@
 <html lang="en">
 <!--ERROR: essa pagina pode somente ser acessada por admin
 aqui o admin pode criar staff
-update staff info
+update staff info*** como ?
 ideia: alterar css deixar a tabela sempre visivel e após a pequisar exibir display only the result
 arrumar diagramação da pagina-->
 <head>
