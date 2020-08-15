@@ -2,7 +2,8 @@
 <html lang="en">
 <!--Error é possivel aparecer sugestões do nome ou id das peças para ajudar a completar os campos da peça?
 quando colocar costumer id completar com personal info canto esquerdo ?
-quando vender peça tem que dimunuir no stoque --' -->
+quando vender peça tem que dimunuir no stoque --' 
+pode ser uma versão mais simplificada de uma notafiscal separada por itens-->
 
 <head>
 	<meta charset="utf-8">
@@ -40,7 +41,7 @@ quando vender peça tem que dimunuir no stoque --' -->
 
 	</div>
 	<!--grid-cointainer-->
-	
+
 
 	<!--href: https://codepen.io/tjoen/pen/vCHfu-->
 
@@ -58,9 +59,9 @@ quando vender peça tem que dimunuir no stoque --' -->
 
 		<article>
 			<h1>Recipient</h1>
-			<address contenteditable>
+			<div class="slogan">
 				<p>Ger's<br>Garage</p>
-			</address>
+			</div>
 			<!--logo at left-->
 
 			<table class="meta">
@@ -87,7 +88,7 @@ quando vender peça tem que dimunuir no stoque --' -->
 							<p>database: product_name</p>
 						</th>
 						<th><span contenteditable>Description</span>
-							<p>product_descrition</p>
+							<p>product_type</p>
 						</th>
 						<th><span contenteditable>Rate</span></th>
 						<th><span contenteditable>Quantity</span>

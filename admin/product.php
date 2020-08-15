@@ -34,7 +34,7 @@
     <form class="product">
         <fieldset>
             <!-- Form Name -->
-            <legend>New product</legend>
+            <h1>New product</h1>
 
             <!-- Select Basic -->
             <div class="form-group">

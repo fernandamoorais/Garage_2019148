@@ -1,4 +1,11 @@
 <?php
+    $dbhost = 'localhost';
+	$dbuser = 'root';
+	$dbpass = '';
+	$dbname = 'ger_garage';
+
+	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
 
 //Href: https://codewithawa.com/posts/admin-and-user-login-in-php-and-mysql-database
 

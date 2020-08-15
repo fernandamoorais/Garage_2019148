@@ -25,85 +25,66 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
 
 </head>
-
 <body>
+    <div class="billing">
+        <div class="grid-container">
+            <div class="btn_return"><button onclick="window.location.href='../admin/dashboard.php';"> Go back </button>
+            </div>
+            <!--btn_return-->
+            <div class="skip"></div>
 
-    <div class="customer">
-        <div class="btn_return">
-            <button onclick="window.location.href='../admin/dashboard.php';">Go back
-        </button>
+            <div class="btn_add"> <button onclick="window.location.href='../admin/receipts.php';">Create a invoice</button>
+            </div>
+            <!--btn_invoice-->
         </div>
+        <!--grid-->
 
-        <div class="search">
-            <form class="search" action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+        <div class="header_wrap">
+            <div class="num_rows">
+                <div class="form-group">
+                    <!--		Show Numbers Of Rows 		-->
+                    <select class="form-control" name="state" id="maxRows" style="margin-left: 30px;">
+
+
+                        <option value="10 ">10</option>
+                        <option value="15 ">15</option>
+                        <option value="20 ">20</option>
+                        <option value="50 ">50</option>
+                        <option value="70 ">70</option>
+                        <option value="100 ">100</option>
+                        <option value="5000 ">Show ALL Rows</option>
+                    </select>
+
+                </div>
+                <!--Form-group-->
+            </div>
+            <!--num_rows-->
+            <div class="tb_search"><input type="text " id="search_input_all " onkeyup="FilterkeyWord_all_table() " placeholder="Search.. " class="form-control " style="width: 50%;"></div>
+            <!--./tb search-->
+
         </div>
+        <!--./"header_wrap "-->
 
-        <table class="table table-striped table-class" id="table-id" style="padding-left:150px;">
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>E-mail</th>
-                    <th>First name</th>
-                    <th>Surname</th>
-                    <th>Phone</th>
-                    <th>Birthday</th>
-                    <th>Adress </th>
-                    <th>Adress</th>
-                    <th>Eircode</th>
-                    <th>Extra info</th>
-                </tr>
-            </thead>
-            <!--  <tfoot>
-                <tr>
-                    <td colspan="10">
-                        <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
-                    </td>
-                </tr>
-            </tfoot>-->
-            <tbody>
-                <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
-                    <td>cell4_1</td>
-                    <td>cell5_1</td>
-                    <td>cell6_1</td>
-                    <td>cell7_1</td>
-                    <td>cell8_1</td>
-                    <td>cell9_1</td>
-                    <td>cell10_1</td>
-                </tr>
-                <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    <td>cell4_2</td>
-                    <td>cell5_2</td>
-                    <td>cell6_2</td>
-                    <td>cell7_2</td>
-                    <td>cell8_2</td>
-                    <td>cell9_2</td>
-                    <td>cell10_2</td>
-                </tr>
-                <tr>
-                    <td>cell1_3</td>
-                    <td>cell2_3</td>
-                    <td>cell3_3</td>
-                    <td>cell4_3</td>
-                    <td>cell5_3</td>
-                    <td>cell6_3</td>
-                    <td>cell7_3</td>
-                    <td>cell8_3</td>
-                    <td>cell9_3</td>
-                    <td>cell10_3</td>
-                </tr>
-            </tbody>
+        <table class="table center table-striped table-class " id="table-id" style="center" ;>
+
+            <tr>
+                <th>User ID</th>
+                <th>E-mail</th>
+                <th>First Nmae</th>
+                <th>Surname</th>
+                <th>Phone</th>
+                <th>Birthday</th>
+                <th>Address</th>
+                <th>Eircode</th>
+                <th>Info</th>        
+
             </tr>
+
+
+            <!--header-->
+
+
         </table>
     </div>
 </body>
-
 </html>

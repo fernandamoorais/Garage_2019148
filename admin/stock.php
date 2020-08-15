@@ -39,31 +39,33 @@
         <!--grid-cointainer-->
 
 
-        <div class="header_wrap">
+        <div class="header_wrap center">
             <div class="num_rows">
                
             </div>
             <!--num_rows-->
             <?php
+            
+            $connection = mysqli_connect("localhost", "root", "", "ger_garage");
             if(isset($_POST['submit'])){
-                            $connection = mysqli_connect("localhost", "root", "", "ger_garage");
-                    $find=$connection->real_escape_string($_POST['find']);
-                $column=$connection->real_escape_string($_POST['column']);
 
-            if($column==""|| ($column!="product_ID" && ($column!="product_name" && ($column!="product_type" &&($column!="brand"))  
-            $column= "product_ID";
-
-        $query="SELECT product_ID from product WHERE $column LIKE'%find%'";
-        $sql = $connection->query($query);
-        if ($sql->num_rows>0){
-            while ($data = $sql->fetch_assoc()) {
-                echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
-            }
-        }else
-        echo"Your Search doesn't match any data"
-            }
+                $find=mysqli_real_escape_string($connection, $_POST['find']);
         
-                        
+                $sql="SELECT * FROM product WHERE product_ID LIKE '%find%' OR  product_name LIKE '%find%' OR product_type LIKE '%find%' OR product_quantity LIKE '%find%' OR BRAND LIKE '%find%'";
+
+                $result = mysqli_query($connection,$sql);
+                $queryResult = mysqli_num_rows($result);
+
+                if ($queryResult > 0){
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
+                    }
+                } else{
+                    echo"Your Search doesn't match any data";
+                }
+       
+            }
+                   
                         ?>
 
             <form method="post" action="">
