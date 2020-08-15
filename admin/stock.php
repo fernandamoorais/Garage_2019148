@@ -38,88 +38,115 @@
         </div>
         <!--grid-cointainer-->
 
-       
-            <div class="header_wrap">
-                <div class="num_rows">
-                    <div class="form-group">
-                        <!--		Show Numbers Of Rows 		-->
-                        <select class="form-control" name="state" id="maxRows" style="margin-left: 30px;">
 
+        <div class="header_wrap">
+            <div class="num_rows">
+               
+            </div>
+            <!--num_rows-->
+            <?php
+            if(isset($_POST['submit'])){
+                            $connection = mysqli_connect("localhost", "root", "", "ger_garage");
+                    $find=$connection->real_escape_string($_POST['find']);
+                $column=$connection->real_escape_string($_POST['column']);
 
-                            <option value="10 ">10</option>
-                            <option value="15 ">15</option>
-                            <option value="20 ">20</option>
-                            <option value="50 ">50</option>
-                            <option value="70 ">70</option>
-                            <option value="100 ">100</option>
-                            <option value="5000 ">Show ALL Rows</option>
-                        </select>
+            if($column==""|| ($column!="product_ID" && ($column!="product_name" && ($column!="product_type" &&($column!="brand"))  
+            $column= "product_ID";
 
-                    </div>
-                    <!--Form-group-->
-                </div>
-                <!--num_rows-->
-                <div class="tb_search"><input type="text " id="search_input_all " onkeyup="FilterkeyWord_all_table() " placeholder="Search.. " class="form-control " style="width: 50%;"></div>
-                <!--./tb search-->
-
-            </div><!--./"header_wrap "-->
-       
+        $query="SELECT product_ID from product WHERE $column LIKE'%find%'";
+        $sql = $connection->query($query);
+        if ($sql->num_rows>0){
+            while ($data = $sql->fetch_assoc()) {
+                echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
+            }
+        }else
+        echo"Your Search doesn't match any data"
+            }
         
+                        
+                        ?>
+
+            <form method="post" action="">
+
+                <input type="text" name="find" placeholder="Search...." />
+                <select>
+                    <option value=""> Select filter</option>
+                    <option value="product_ID"> ID</option>
+                    <option value="product_name"> Name</option>
+                    <option value="product_type"> Type</option>
+                    <option value="brand"> Brand</option>
+                </select>
+
+                <input type="submit" name="submit" value="Submit" />
+
+            </form>
+
+        </div>
+        <!--./"header_wrap "-->
+
+        <section>
+            <div class="employee">
+                <h2 style="text-align: center;">Search product </h2>
+
+
+                <!--    if (!empty($_REQUEST['product_ID'])) {
+
+                    $sql = "SELECT * FROM product WHERE product_ID LIKE '$product_ID'";
+                    $result = $connection->query($sql);
+
+                    if ($result === TRUE) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "0 result";
+                    }
+                    mysqli_close($connection);
+                }
+
+                ?>-->
+                <table class="table center table-striped table-class " id="table-id">
+
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product type</th>
+                        <th>Brand</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>In stock</th>
+
+                    </tr>
+                    <?php
+
+
+                    $connection = mysqli_connect("localhost", "root", "", "ger_garage");
+                    if ($connection->connect_error) {
+                        die("Connection Failed:" . $connection->connect_error);
+                    }
+                    $sql = "SELECT * FROM product";
+                    $result = $connection->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["brand"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "0 results";
+                    }
+                    $connection->close();
+
+                    ?>
+                </table>
 
 
 
-
-
-        <table class="table table-striped table-class " id="table-id" style="padding-left:150px;">
-
-            <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Type</th>
-                <th>extra info</th>
-
-            </tr>
-
-
-            <!--header-->
-
-
-
-            <tr>
-                <td>1</td>
-                <td>Rajah Armstrong</td>
-                <td>erat.neque@noncursusnon.ca</td>
-                <td>1-636-140-1210</td>
-                <td>Oct 26, 2015</td>
-                <td>586159</td>
-
-
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Rajah Armstrong</td>
-                <td>erat.neque@noncursusnon.ca</td>
-                <td>1-636-140-1210</td>
-                <td>Oct 26, 2015</td>
-                <td>586159</td>
-
-
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Rajah Armstrong</td>
-                <td>erat.neque@noncursusnon.ca</td>
-                <td>1-636-140-1210</td>
-                <td>Oct 26, 2015</td>
-                <td>586159</td>
-
-
-            </tr>
-
-        </table>
-        <!--table table-striped table-class-->
+            </div>
+            <!--./div employee-->
+        </section>
+        <!---./ staff list-->
 
         <!--		Start Pagination -->
         <div class='pagination-container'>
