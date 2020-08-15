@@ -38,7 +38,7 @@
 
 <body>
     <div class="btn_return">
-        <button onclick="window.location.href='index.html';">
+        <button onclick="window.location.href='index.php';">
         Go back
       </button>
     </div>

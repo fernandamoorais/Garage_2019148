@@ -25,47 +25,50 @@
 
 <body>
     <div class="billing">
-        <div class="btn_return">
-            <button onclick="window.location.href='../admin/dashboard.html';">
-        Go back
-      </button>
+
+        <div class="grid-container">
+            <div class="btn_return"><button onclick="window.location.href='../admin/dashboard.php';"> Go back </button>
+            </div>
+            <!--btn_return-->
+            <div class="skip"></div>
+
+            <div class="btn_add"> <button onclick="window.location.href='../admin/product.php';">Add a new product</button>
+            </div>
+            <!--btn_invoice-->
         </div>
-        <div class="btn_invoice">
-            <button onclick="window.location.href='../admin/product.html';">
-        Add a new product
-      </button>
-        </div>
+        <!--grid-cointainer-->
 
-        <div class="header_wrap">
-            <div class="num_rows">
+       
+            <div class="header_wrap">
+                <div class="num_rows">
+                    <div class="form-group">
+                        <!--		Show Numbers Of Rows 		-->
+                        <select class="form-control" name="state" id="maxRows" style="margin-left: 30px;">
 
-                <div class="form-group">
-                    <!--		Show Numbers Of Rows 		-->
-                    <select class="form-control" name="state" id="maxRows" style="margin-left: 30px;">
-                           
-                           
-                           <option value="10 ">10</option>
-                           <option value="15 ">15</option>
-                           <option value="20 ">20</option>
-                           <option value="50 ">50</option>
-                           <option value="70 ">70</option>
-                           <option value="100 ">100</option>
-              <option value="5000 ">Show ALL Rows</option>
-                          </select>
 
+                            <option value="10 ">10</option>
+                            <option value="15 ">15</option>
+                            <option value="20 ">20</option>
+                            <option value="50 ">50</option>
+                            <option value="70 ">70</option>
+                            <option value="100 ">100</option>
+                            <option value="5000 ">Show ALL Rows</option>
+                        </select>
+
+                    </div>
+                    <!--Form-group-->
                 </div>
-                <!--Form-group-->
+                <!--num_rows-->
+                <div class="tb_search"><input type="text " id="search_input_all " onkeyup="FilterkeyWord_all_table() " placeholder="Search.. " class="form-control " style="width: 50%;"></div>
+                <!--./tb search-->
 
-            </div>
-            <!--num_rows-->
+            </div><!--./"header_wrap "-->
+       
+        
 
-            <div class="tb_search ">
-                <input type="text " id="search_input_all " onkeyup="FilterkeyWord_all_table() " placeholder="Search.. " class="form-control ">
-            </div>
-            <!--./tb search-->
 
-        </div>
-        <!--./"header_wrap "-->
+
+
 
         <table class="table table-striped table-class " id="table-id" style="padding-left:150px;">
 

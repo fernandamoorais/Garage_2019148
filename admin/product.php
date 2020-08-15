@@ -26,7 +26,7 @@
 
 <body>
     <div class="btn_return">
-        <button onclick="window.location.href='../admin/stock.html';">
+        <button onclick="window.location.href='../admin/stock.php';">
         Go back
       </button>
     </div>

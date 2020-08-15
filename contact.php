@@ -20,7 +20,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    
+
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -31,12 +31,14 @@
         hr.new1 {
             border-top: 1px solid white;
         }
-        body{
+
+        body {
             background-color: rgb(35, 35, 35);
 
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation BAR -->
@@ -75,7 +77,7 @@
                     </li>
 
                     <li class=" nav-item">
-                        <a class="nav-link" href='#'>Login/Register</a>
+                        <a class="nav-link" href='login.php'>Login/Register</a>
                     </li>
                 </ul>
 
@@ -93,7 +95,7 @@
         </header>
         <hr class="new1">
         <br>
-        <br> 
+        <br>
 
         <div class="content">
 
@@ -111,8 +113,7 @@
 
 
                             <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.84427303271!2d-6.261063984718505!3d53.34604378243583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e84cfcc9cbf%3A0x689c7d1c132a0ddf!2sCCT%20College%20Dublin!5e0!3m2!1sen!2sie!4v1595083999595!5m2!1sen!2sie"
-                                    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.84427303271!2d-6.261063984718505!3d53.34604378243583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e84cfcc9cbf%3A0x689c7d1c132a0ddf!2sCCT%20College%20Dublin!5e0!3m2!1sen!2sie!4v1595083999595!5m2!1sen!2sie" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                             </div>
                             <!--Google map-->
 
@@ -132,10 +133,10 @@
 
                     <div class="card card-cascade narrower">
 
-                        <div class="card-body card-body-cascade text-center">
+                        <div class="card-body card-body-cascade text-center" >
 
-                            <!--Google map-->
-                            <div class="Contact_us">
+                          
+                            <div class="contact_us">
                                 <p><i class="fas fa-map-pin"></i> 30-34 Westmoreland St, Dublin 2,
                                     <br> D02 HK35</p>
                             </div>
@@ -143,11 +144,13 @@
                                 <p><i class="fa fa-phone fa-lg"></i> +01 54892 945 - +01 84238 548
                                 </p>
                             </div>
-                            <div class="Contact_us">
+
+                            <div class="contact_us">
                                 <p><i class="fa fa-envelope fa-lg"></i> gergarages@garage.ie
                                 </p>
                             </div>
-                            <div class="Contact_us">
+
+                            <div class="contact_us">
                                 <p><i class="fa fa-clock fa-lg" aria-hidden="true"></i> Sunday: closed
                                     <br> Monday - Wednesday: 9am -6 pm
                                     <br> Thursday - Saturday: 8am - 5pm
@@ -167,7 +170,8 @@
             <!--row-->
         </div>
         <!--content-->
-    </div>   <!--./container contact-->
+    </div>
+    <!--./container contact-->
 
 </body>
 

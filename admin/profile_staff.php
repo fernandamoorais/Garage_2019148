@@ -29,7 +29,7 @@
 
 <body>
     <div class="btn_return">
-        <button onclick="window.location.href='../admin/dashboard.html';">
+        <button onclick="window.location.href='../admin/dashboard.php';">
         Go back
       </button>
     </div>

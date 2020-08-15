@@ -158,7 +158,7 @@
 
                             <p></p>
 
-                            <button class="btn_sign_up" onclick="window.location.href='registration.html';">BECAME A MEMBER</button>
+                            <button class="btn_sign_up" onclick="window.location.href='registration.php';">BECAME A MEMBER</button>
                         </div>
                     </div>
                 </div>

@@ -5,189 +5,194 @@ quando colocar costumer id completar com personal info canto esquerdo ?
 quando vender peça tem que dimunuir no stoque --' -->
 
 <head>
-    <meta charset="utf-8">
-    <!--characther set -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--setting scale for mabile devices-->
+	<meta charset="utf-8">
+	<!--characther set -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--setting scale for mabile devices-->
 
-    <title>Ger's Garage ADM</title>
+	<title>Ger's Garage ADM</title>
 
-    <!--ERROR: não ets ainportando -->
-    <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
+	<!--ERROR: não ets ainportando -->
+	<!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
 
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
-    <link href="../css/admin.css" rel="stylesheet" type="text/css">
-    <!-- style-->
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
+	<link href="../css/admin.css" rel="stylesheet" type="text/css">
+	<!-- style-->
 
-    <script type="text/javascript" src="../js/main.js"></script>
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <div class="btn_return">
-        <button onclick="window.location.href='../admin/billing.html';">
-        Go back
-      </button>
+	<div class="grid-container">
 
-        <div class="btn_return">
-            <button>
-        Save invoice
-      </button>
+		<div class="btn_return"><button onclick="window.location.href='../admin/billing.php';"> Go back </button>
+		</div>
+		<!--btn_return-->
+		<div class="skip"></div>
 
-        </div>
-        <!--href: https://codepen.io/tjoen/pen/vCHfu-->
-        <div class="invoice">
-            <header>
-                <h1>Invoice</h1>
-                <address contenteditable>
+		<div class="btn_add"> <button>Print</button>
+		</div>
+		<!--btn_invoice-->
+
+	</div>
+	<!--grid-cointainer-->
+	
+
+	<!--href: https://codepen.io/tjoen/pen/vCHfu-->
+
+	<div class="invoice">
+		<header>
+			<h1>Invoice</h1>
+			<address contenteditable>
 				<p>Jonathan Neal</p>
 				<p>101 E. Chapman Ave<br>Orange, CA 92866</p>
 				<p>(800) 555-1234</p>
 			</address>
 
-            </header>
-            <!--./header-->
+		</header>
+		<!--./header-->
 
-            <article>
-                <h1>Recipient</h1>
-                <address contenteditable>
+		<article>
+			<h1>Recipient</h1>
+			<address contenteditable>
 				<p>Ger's<br>Garage</p>
 			</address>
-                <!--logo at left-->
+			<!--logo at left-->
 
-                <table class="meta">
-                    <tr>
-                        <th><span contenteditable>Invoice #</span></th>
-                        <td><span contenteditable>101138</span></td>
-                    </tr>
-                    <tr>
-                        <th><span contenteditable>Date</span></th>
-                        <td><span contenteditable>January 1, 2012</span></td>
-                    </tr>
-                    <tr>
-                        <th><span contenteditable>Amount Due</span></th>
-                        <td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
-                    </tr>
-                </table>
-                <!--./meta-->
+			<table class="meta">
+				<tr>
+					<th><span contenteditable>Invoice #</span></th>
+					<td><span contenteditable>101138</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Date</span></th>
+					<td><span contenteditable>January 1, 2012</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Amount Due</span></th>
+					<td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
+				</tr>
+			</table>
+			<!--./meta-->
 
-                <table class="inventory">
-                    <thead>
+			<table class="inventory">
+				<thead>
 
-                        <tr>
-                            <th><span contenteditable>Item</span>
-                                <p>database: product_name</p>
-                            </th>
-                            <th><span contenteditable>Description</span>
-                                <p>product_descrition</p>
-                            </th>
-                            <th><span contenteditable>Rate</span></th>
-                            <th><span contenteditable>Quantity</span>
-                                <p>product_quantity</p>
-                            </th>
-                            <th><span contenteditable>Price</span>
-                                <p>product_price</p>
-                            </th>
-                        </tr>
+					<tr>
+						<th><span contenteditable>Item</span>
+							<p>database: product_name</p>
+						</th>
+						<th><span contenteditable>Description</span>
+							<p>product_descrition</p>
+						</th>
+						<th><span contenteditable>Rate</span></th>
+						<th><span contenteditable>Quantity</span>
+							<p>product_quantity</p>
+						</th>
+						<th><span contenteditable>Price</span>
+							<p>product_price</p>
+						</th>
+					</tr>
 
-                    </thead>
-                    <!--table header-->
+				</thead>
+				<!--table header-->
 
-                    <tbody>
-                        <tr>
-                            <td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
-                            <td><span contenteditable>Experience Review</span></td>
-                            <td><span data-prefix>$</span><span contenteditable>150.00</span></td>
-                            <td><span contenteditable>4</span></td>
-                            <td><span data-prefix>$</span><span>600.00</span></td>
-                        </tr>
-                    </tbody>
-                    <!--tbody-->
+				<tbody>
+					<tr>
+						<td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
+						<td><span contenteditable>Experience Review</span></td>
+						<td><span data-prefix>$</span><span contenteditable>150.00</span></td>
+						<td><span contenteditable>4</span></td>
+						<td><span data-prefix>$</span><span>600.00</span></td>
+					</tr>
+				</tbody>
+				<!--tbody-->
 
-                </table>
-                <!--inventory producst-->
+			</table>
+			<!--inventory producst-->
 
-                <a class="add">+</a>
-                <!--add line to table-->
+			<a class="add">+</a>
+			<!--add line to table-->
 
-                <br>
+			<br>
 
-                <table class="inventory">
-                    <thead>
+			<table class="inventory">
+				<thead>
 
-                        <tr>
-                            <th><span contenteditable>Item</span>
-                                <p>database: service_name</p>
-                            </th>
-                            <th><span contenteditable>Description</span>
-                                <p>service_comment</p>
-                            </th>
-                            <th><span contenteditable>Rate</span></th>
-                            <th><span contenteditable>Quantity</span>
-                                <p>service_quantity</p>
-                            </th>
-                            <th><span contenteditable>Price</span>
-                                <p>service_price</p>
-                            </th>
-                        </tr>
+					<tr>
+						<th><span contenteditable>Item</span>
+							<p>database: service_name</p>
+						</th>
+						<th><span contenteditable>Description</span>
+							<p>service_comment</p>
+						</th>
+						<th><span contenteditable>Rate</span></th>
+						<th><span contenteditable>Quantity</span>
+							<p>service_quantity</p>
+						</th>
+						<th><span contenteditable>Price</span>
+							<p>service_price</p>
+						</th>
+					</tr>
 
-                    </thead>
-                    <!--./head-->
+				</thead>
+				<!--./head-->
 
-                    <tbody>
-                        <tr>
-                            <td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
-                            <td><span contenteditable>Experience Review</span></td>
-                            <td><span data-prefix>$</span><span contenteditable>150.00</span></td>
-                            <td><span contenteditable>4</span></td>
-                            <td><span data-prefix>$</span><span>600.00</span></td>
-                        </tr>
-                    </tbody>
-                    <!--tbody-->
+				<tbody>
+					<tr>
+						<td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>
+						<td><span contenteditable>Experience Review</span></td>
+						<td><span data-prefix>$</span><span contenteditable>150.00</span></td>
+						<td><span contenteditable>4</span></td>
+						<td><span data-prefix>$</span><span>600.00</span></td>
+					</tr>
+				</tbody>
+				<!--tbody-->
 
-                </table>
-                <!--inventory service-->
+			</table>
+			<!--inventory service-->
 
-                <a class="add">+</a>
-                <!--add line to table-->
+			<a class="add">+</a>
+			<!--add line to table-->
 
-                <table class="balance">
-                    <tr>
-                        <th><span contenteditable>Total</span></th>
-                        <td><span data-prefix>$</span><span>600.00</span></td>
-                    </tr>
-                    <tr>
-                        <th><span contenteditable>Amount Paid</span></th>
-                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
-                    </tr>
-                    <tr>
-                        <th><span contenteditable>Balance Due</span></th>
-                        <td><span data-prefix>$</span><span>600.00</span></td>
-                    </tr>
-                </table>
-                <!--balance-->
+			<table class="balance">
+				<tr>
+					<th><span contenteditable>Total</span></th>
+					<td><span data-prefix>$</span><span>600.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Amount Paid</span></th>
+					<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Balance Due</span></th>
+					<td><span data-prefix>$</span><span>600.00</span></td>
+				</tr>
+			</table>
+			<!--balance-->
 
-            </article>
-            <!--article-->
+		</article>
+		<!--article-->
 
-            <aside>
-                <h1><span contenteditable>Additional Notes</span></h1>
-                <div contenteditable>
-                    <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
-                </div>
-            </aside>
-        </div>
-        <!--./ivoice-->
-
-
+		<aside>
+			<h1><span contenteditable>Additional Notes</span></h1>
+			<div contenteditable>
+				<p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+			</div>
+		</aside>
+	</div>
+	<!--./ivoice-->
 
 
 
 
-        <!--/* Shivving (IE8 is not supported, but at least it won't look as awful)
+
+
+	<!--/* Shivving (IE8 is not supported, but at least it won't look as awful)
 /* ========================================================================== */
 
 (function (document) {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!ERROr: restringir acesso , somente ADM
+<!--ERROr: restringir acesso , somente ADM
     FAZER A MESMA COISA COM A TABELA que no do staff, sempre visivel e depois mostrra somente resultado
     é possivel contar e mostrar quantos vehicle estão cadastrados ?
     COMO SALVAR e mostrar ultimo invoice pelo menos que é requisito.-->
@@ -30,7 +30,7 @@
 
     <div class="customer">
         <div class="btn_return">
-            <button onclick="window.location.href='../admin/dashboard.html';">Go back
+            <button onclick="window.location.href='../admin/dashboard.php';">Go back
         </button>
         </div>
 

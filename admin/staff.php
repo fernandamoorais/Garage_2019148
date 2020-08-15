@@ -139,7 +139,7 @@ arrumar diagramação da pagina-->
             <button class="btn_staff" onclick="document.getElementById('popup').style.display='block'"> Create staff</button>
         </div>
         <div class="btn_return">
-            <button onclick="window.location.href='../admin/dashboard.html';">Go back </button>
+            <button onclick="window.location.href='../admin/dashboard.php';">Go back </button>
         </div>
 
     </div>

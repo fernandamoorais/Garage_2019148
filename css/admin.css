@@ -5,9 +5,20 @@
     @import url(https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,300&family=Roboto+Condensed:ital@1&display=swap);
     /*-------------------------------PROFILE_SATFF--------------------------------*/
     
+    body {
+        background-color: rgba(0, 0, 0, 0.513);
+    }
+    
     h2 {
         font-family: 'Montserrat Alternates', sans-serif;
         text-shadow: 1px 1px #000000;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 200px 300px 300px 200px;
+        grid-template-rows: 90px;
+        grid-template-areas: "btn_return skip . btn_invoice";
     }
     
     .staff {
@@ -57,7 +68,7 @@
     }
     
     .btn_return button {
-        margin-top: 30px;
+        margin: 30px 30px 30px 30px;
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 1000px;
@@ -69,11 +80,12 @@
         text-align: center;
         margin-bottom: 35px;
         text-shadow: 1px 1px #000000;
+        grid-area: btn_return;
     }
     /*----------------BILLING TAB----------*/
     
-    .btn_invoice button {
-        margin-top: 30px;
+    .btn_add button {
+        margin: 30px 30px 30px 30px;
         background: #ffffff;
         border: 1px solid #000000;
         background-color: #238b997c;
@@ -85,10 +97,10 @@
         font: italic bold 18px/1 "Open Sans", sans-serif;
         text-align: center;
         text-shadow: 1px 1px #000000;
+        grid-area: btn_return;
     }
     
     .billing {
-        background-color: rgba(0, 0, 0, 0.513);
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         padding: 30px, 30px, 30px, 30px;
     }
@@ -103,8 +115,13 @@
         background-color: #fffbfb
     }
     
-    .billing table tr:hover {
+    table tr:hover {
         background-color: #238b997c;
+    }
+    
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
     }
     
     th {
@@ -129,6 +146,8 @@
     .header_wrap {
         padding: 30px;
         margin-bottom: 50px;
+        margin-left: 150px;
+        margin-top: 70px;
     }
     
     .num_rows {
@@ -136,9 +155,9 @@
         float: left;
     }
     
-    .billing .tb_search {
-        width: 20%;
-        float: right;
+    .tb_search {
+        width: 100%;
+        border-radius: 20px;
     }
     
     .billing .pagination-container {
@@ -194,6 +213,7 @@
         border-radius: 1px;
         box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
         margin-bottom: 30px;
+        margin-top: 100px;
         color: black;
     }
     /* heading */

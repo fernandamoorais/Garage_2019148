@@ -26,6 +26,14 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--script-->
+<style>
+    body{
+        background-image: url(img/final_background2.jpg);
+        background-repeat: repeat-x;
+        
+       
+    }
+</style>
 
 </head>
 <body>
@@ -77,8 +85,8 @@
         <!--container-fluid-->
     </nav>
     <!--NavBar-->
-    <div id="container-us">
-        <img src="img/final_background.jpg" style="width:100%;">
+    <div class="container-us">
+       
         <div class="text-block">
             <header>
                 <h2>Our Story</h2>

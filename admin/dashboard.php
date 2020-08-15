@@ -33,7 +33,7 @@
     <div class="dashboard">
         <div class="content">
             <!-- card -->
-            <a href="../admin/profile_staff.html">
+            <a href="../admin/profile_staff.php">
                 <div class="card">
 
                     <div class="icon"><i class="fas fa-user fa-2x"></i></div>
@@ -46,7 +46,7 @@
             <!--./a profile-->
 
             <!-- card -->
-            <a href="../admin/booking.html">
+            <a href="../admin/booking.php">
                 <div class="card">
 
                     <div class="icon"><i class="far fa-calendar-alt fa-2x"></i></div>
@@ -58,7 +58,7 @@
             </a>
             <!--./a bookins-->
 
-            <a href="../admin/billing.html">
+            <a href="../admin/billing.php">
                 <div class="card">
 
                     <div class="icon"><i class="fas fa-file-invoice fa-2x"></i></div>
@@ -75,7 +75,7 @@
 
         <div class="content">
             <!-- card -->
-            <a href="../admin/customer.html">
+            <a href="../admin/customer.php">
                 <div class="card">
 
                     <div class="icon"><i class="fas fa-list fa-2x"></i></div>
@@ -88,7 +88,7 @@
             <!--./a profile-->
 
             <!-- card -->
-            <a href="../admin/stock.html">
+            <a href="../admin/stock.php">
                 <div class="card">
 
                     <div class="icon"><i class="far fa-chart-bar fa-2x"></i></div>
