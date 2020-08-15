@@ -31,9 +31,8 @@ hoover não esta funcionando na nav bar"-->
     <style>
     body {
     background-color: rgb(35, 35, 35);
+
 }
-
-
     </style>
 
 </head>
@@ -89,14 +88,14 @@ hoover não esta funcionando na nav bar"-->
     <!--NavBar-->
 
     <div class="banner">
-        <!--image on the background, Title with visual effect-->
+        <!-- Title with visual effect-->
 
         <div class="inner">
 
             <p>Ger's Garage</p>
 
         </div>
-        <!--inener-->
+        <!--inner-->
 
         <div class="slogan">
             <img src="img/sample.JPG" alt="Garage slogan">
