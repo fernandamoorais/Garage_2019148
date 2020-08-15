@@ -72,8 +72,7 @@
                 <th>Phone</th>
                 <th>Invoice</th>
                 <th>Date of payment</th>
-                <th>PDF</th>
-                <!--POSSIBEL?-->
+               
 
             </tr>
 
