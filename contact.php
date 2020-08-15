@@ -31,10 +31,13 @@
         hr.new1 {
             border-top: 1px solid white;
         }
+        body{
+            background-color: rgb(35, 35, 35);
+
+        }
     </style>
 </head>
 <body>
-
 
     <!-- Navigation BAR -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -89,6 +92,8 @@
             <h2>Contact us</h2>
         </header>
         <hr class="new1">
+        <br>
+        <br> 
 
         <div class="content">
 
@@ -143,9 +148,9 @@
                                 </p>
                             </div>
                             <div class="Contact_us">
-                                <p><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Sunday: closed
-                                    <br> Monday - Wednesday: 8am - 5pm
-                                    <br> Thursday - Saturday: 8am - 7 pm
+                                <p><i class="fa fa-clock fa-lg" aria-hidden="true"></i> Sunday: closed
+                                    <br> Monday - Wednesday: 9am -6 pm
+                                    <br> Thursday - Saturday: 8am - 5pm
                                 </p>
                             </div>
 
@@ -161,10 +166,8 @@
             </div>
             <!--row-->
         </div>
-        <!--container-->
-    </div>
-    <!--contact-->
-
+        <!--content-->
+    </div>   <!--./container contact-->
 
 </body>
 
