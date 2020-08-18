@@ -1,9 +1,19 @@
+<?php
+include('../conn.php');
+
+if (!isset($_SESSION['isAdm'])) {
+    header("Location: ../login.php");
+}
+
+$sqlCustomer = "SELECT * FROM user";
+
+$resultCustomer = mysqli_query($conn, $sqlCustomer);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-<!--ERROr: restringir acesso , somente ADM
-    FAZER A MESMA COISA COM A TABELA que no do staff, sempre visivel e depois mostrra somente resultado
-    é possivel contar e mostrar quantos vehicle estão cadastrados ?
-    COMO SALVAR e mostrar ultimo invoice pelo menos que é requisito.-->
+
 <head>
     <meta charset="utf-8">
     <!--characther set -->
@@ -12,8 +22,7 @@
 
     <title>Ger's Garage ADM</title>
 
-    <!--ERROR: não ets ainportando -->
-    <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
+ 
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
@@ -25,66 +34,77 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
 
 </head>
+
 <body>
     <div class="billing">
         <div class="grid-container">
             <div class="btn_return"><button onclick="window.location.href='../admin/dashboard.php';"> Go back </button>
             </div>
             <!--btn_return-->
-            <div class="skip"></div>
 
-            <div class="btn_add"> <button onclick="window.location.href='../admin/receipts.php';">Create a invoice</button>
-            </div>
-            <!--btn_invoice-->
+
+
         </div>
         <!--grid-->
-
-        <div class="header_wrap">
-            <div class="num_rows">
-                <div class="form-group">
-                    <!--		Show Numbers Of Rows 		-->
-                    <select class="form-control" name="state" id="maxRows" style="margin-left: 30px;">
+        <h2 style="text-align: center;"> List of Customers</h2>
 
 
-                        <option value="10 ">10</option>
-                        <option value="15 ">15</option>
-                        <option value="20 ">20</option>
-                        <option value="50 ">50</option>
-                        <option value="70 ">70</option>
-                        <option value="100 ">100</option>
-                        <option value="5000 ">Show ALL Rows</option>
-                    </select>
-
-                </div>
-                <!--Form-group-->
-            </div>
-            <!--num_rows-->
-            <div class="tb_search"><input type="text " id="search_input_all " onkeyup="FilterkeyWord_all_table() " placeholder="Search.. " class="form-control " style="width: 50%;"></div>
-            <!--./tb search-->
-
-        </div>
-        <!--./"header_wrap "-->
-
-        <table class="table center table-striped table-class " id="table-id" style="center" ;>
+        <table class="table center table-striped table-class" id="table-id" style="text-align: center;">
 
             <tr>
                 <th>User ID</th>
-                <th>E-mail</th>
-                <th>First Nmae</th>
-                <th>Surname</th>
+                <th>Email</th>
+                <th>Name</th>               
                 <th>Phone</th>
-                <th>Birthday</th>
-                <th>Address</th>
+                <th>DOB</th>
+                <th>Adress</th>
+                <th>Adress</th>
                 <th>Eircode</th>
-                <th>Info</th>        
+                <th>Info</th>
+
 
             </tr>
 
 
             <!--header-->
 
+            <?php
+            while ($rowCustomer = mysqli_fetch_array($resultCustomer)) {
+
+                $sqlUser = "SELECT * FROM user WHERE id_user = " . $rowCustomer['id_user'] . " ";
+                $resultUser = mysqli_query($conn, $sqlUser);
+                $rowUser = mysqli_fetch_array($resultUser);
+
+
+
+            ?>
+
+                <tr>
+                    <td><?php echo $rowUser['id_user']; ?></td>
+                    <td><?php echo $rowUser['email']; ?></td>
+                    <td><?php echo $rowUser['first_name']; ?> <?php echo $rowUser['last_name']; ?></td>
+                    <td><?php echo $rowUser['phone']; ?></td>
+                    <td><?php echo $rowUser['birthday']; ?></td>
+                    <td><?php echo $rowUser['address']; ?></td>
+                    <td><?php echo $rowUser['address2']; ?></td>
+                    <td><?php echo $rowUser['eircode']; ?></td>
+                    <td><?php echo $rowUser['info']; ?></td>
+
+
+                </tr>
+
+            <?php } ?>
+
 
         </table>
-    </div>
+        <!--table table-striped table-class-->
+
+
+
+    </div><!--billing-->
+
+
+
 </body>
+
 </html>

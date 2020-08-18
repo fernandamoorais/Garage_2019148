@@ -35,43 +35,34 @@
 <body>
 
 
-    <!-- Navigation BAR -->
-    <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
+   <!-- Navigation BAR -->
+   <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
 
         <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Home </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="services.php">Service</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="services.php">Service</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='us.php'> About Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='contact.php'> Contact </a>
+                        <a class="nav-link" href='contact.php'> Contact us</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href='booking.php'>Book our services</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='profile.php'>Profile</a>
-                    </li>
-
+ 
                     <li class=" nav-item">
-                        <a class="nav-link" href='#'>Login/Register</a>
+                        <a class="nav-link" href='login.php'>Member area</a>
                     </li>
                 </ul>
 
@@ -133,7 +124,7 @@
 
             <div class="col-md-4">
                 <div class="box-part text-center">
-                    <i class="fas fa-cogs fa-5px"></i>
+                    <i class="fas fa-cogs fa-5x"></i>
                     <h2>Major service</h2>
                     <p>The Major Service is our most comprehensive car service which includes everything needed in an annual Service. In addition, we change parts recommended for replacement every two years including a brake fluid change.
                     </p>
@@ -147,8 +138,8 @@
             <div class="col-md-4">
                 <div class="box-part text-center">
                     <i class="fas fa-key fa-5px"></i>
-                    <h2>Pick up</h2>
-                    <p>Programme your annual maintenance. Recommended every 12,000 miles or 12 months.</p>
+                    <h2>Tyre service|wheel alignment</h2>
+                    <p>Tire alignment, also known as wheel alignment, can help your tires perform properly and help them last longer. It can also improve handling and keep your vehicle from pulling in one direction or vibrating strangely on the road.</p>
                 </div>
                 <!--/.box-part-->
             </div>

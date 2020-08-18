@@ -9,9 +9,7 @@
 
     <title>Ger's Garage ADM </title>
 
-    <!--ERROR: não ets ainportando -->
-    <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
-
+  
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -25,28 +23,32 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-
+<style>
+    body{
+        background-color: #1D1D1D;
+    }
+</style>
 </head>
 
 <body>
 
     <div class="dashboard">
         <div class="content">
-            <!-- card -->
-            <a href="../admin/profile_staff.php">
+
+        <a href="../admin/staff.php">
                 <div class="card">
 
-                    <div class="icon"><i class="fas fa-user fa-2x"></i></div>
-                    <p class="title">Profile</p>
-                    <p class="text">Click to see your profile page.</p>
+                    <div class="icon"><i class="fas fa-home fa-2x"></i></div>
+                    <p class="title">Staff</p>
+                    <p class="text">Staff info</p>
 
                 </div>
                 <!-- end card -->
             </a>
-            <!--./a profile-->
+            <!--./a staff-->
 
-            <!-- card -->
-            <a href="../admin/booking.php">
+        <!-- card -->
+            <a href="../admin/admbooking.php">
                 <div class="card">
 
                     <div class="icon"><i class="far fa-calendar-alt fa-2x"></i></div>
@@ -58,10 +60,10 @@
             </a>
             <!--./a bookins-->
 
-            <a href="../admin/billing.php">
+            <a href="../admin/receipts.php">
                 <div class="card">
 
-                    <div class="icon"><i class="fas fa-file-invoice fa-2x"></i></div>
+                    <div class="icon"><i class="fas fa-file-invoice-dollar fa-2x"></i></div>
                     <p class="title">Invoices</p>
                     <p class="text">Billings, products invoice</p>
 
@@ -100,17 +102,19 @@
             </a>
             <!--./a bookins-->
 
-            <a href="../admin/staff.php">
+           
+            <a href="../logout.php">
                 <div class="card">
 
-                    <div class="icon"><i class="fas fa-home fa-2x"></i></div>
-                    <p class="title">Staff</p>
-                    <p class="text">Staff info</p>
+                    <div class="icon"><i class="fas fa-sign-out-alt fa-2x"></i></div>
+                    <p class="title">LOGOUT</p>
+                    <p class="text">EXIT SYSTEM</p>
 
                 </div>
                 <!-- end card -->
             </a>
-            <!--./a extra-->
+            <!--./a logout-->
+
         </div>
     </div>
     <!--./ dashboard-->

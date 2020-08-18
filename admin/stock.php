@@ -1,5 +1,19 @@
+<?php
+include('../conn.php');
+
+if (!isset($_SESSION['isAdm'])) {
+    header("Location: ../login.php");
+}
+
+//employee=supply
+$sqlSupply = "SELECT * FROM product";
+$resultSupply = mysqli_query($conn, $sqlSupply);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+<!--ERROR- ideia quando eu insiro um produto e a quantidade no invoice é possivel ja subtrair automaticamente da tabela produtos?-->
 
 <head>
     <meta charset="utf-8">
@@ -24,146 +38,113 @@
 </head>
 
 <body>
-    <div class="billing">
 
-        <div class="grid-container">
-            <div class="btn_return"><button onclick="window.location.href='../admin/dashboard.php';"> Go back </button>
-            </div>
-            <!--btn_return-->
-            <div class="skip"></div>
+    <div class="row">
 
-            <div class="btn_add"> <button onclick="window.location.href='../admin/product.php';">Add a new product</button>
-            </div>
-            <!--btn_invoice-->
+        <div class="btn_return">
+            <button onclick="window.location.href='../admin/dashboard.php';">Go back </button>
         </div>
-        <!--grid-cointainer-->
 
-
-        <div class="header_wrap center">
-            <div class="num_rows">
-               
-            </div>
-            <!--num_rows-->
+        <div class="btn_add">
+            <button onclick="window.location.href='../admin/product.php';"> Add a product</button>
+        </div>
+    </div>
+    <section>
+        <div>
             <?php
-            
-            $connection = mysqli_connect("localhost", "root", "", "ger_garage");
-            if(isset($_POST['submit'])){
+            if (isset($_GET['find'])) {
 
-                $find=mysqli_real_escape_string($connection, $_POST['find']);
-        
-                $sql="SELECT * FROM product WHERE product_ID LIKE '%find%' OR  product_name LIKE '%find%' OR product_type LIKE '%find%' OR product_quantity LIKE '%find%' OR BRAND LIKE '%find%'";
+                $find = mysqli_real_escape_string($connection, $_GET['find']);
 
-                $result = mysqli_query($connection,$sql);
+                $sql = "SELECT * FROM product WHERE product_id LIKE '%find%' OR  product_name LIKE '%find%' OR product_type LIKE '%find%' OR product_quantity LIKE '%find%' OR product_brand LIKE '%find%'";
+
+                $result = mysqli_query($connection, $sql);
                 $queryResult = mysqli_num_rows($result);
 
-                if ($queryResult > 0){
+                if ($queryResult > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
+                        echo "<tr><td>" . $row["product_id"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_brand"] . "</td></tr>";
                     }
-                } else{
-                    echo"Your Search doesn't match any data";
+                } else {
+                    echo "Your Search doesn't match any data";
                 }
-       
             }
-                   
-                        ?>
-
+            ?>
             <form method="post" action="">
-
-                <input type="text" name="find" placeholder="Search...." />
-                <select>
+            <input type="text" name="find" placeholder="Search....">
+               
+                <select name="find">
                     <option value=""> Select filter</option>
-                    <option value="product_ID"> ID</option>
+                    <option value="product_id"> ID</option>
                     <option value="product_name"> Name</option>
                     <option value="product_type"> Type</option>
-                    <option value="brand"> Brand</option>
+                    <option value="product_type"> Brand</option>
                 </select>
 
-                <input type="submit" name="submit" value="Submit" />
+                <input type="submit" name="submit" value="find" />
 
             </form>
 
         </div>
         <!--./"header_wrap "-->
+        
+
 
         <section>
-            <div class="employee">
-                <h2 style="text-align: center;">Search product </h2>
-
-
-                <!--    if (!empty($_REQUEST['product_ID'])) {
-
-                    $sql = "SELECT * FROM product WHERE product_ID LIKE '$product_ID'";
-                    $result = $connection->query($sql);
-
-                    if ($result === TRUE) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
-                        }
-                        echo "</table>";
-                    } else {
-                        echo "0 result";
-                    }
-                    mysqli_close($connection);
-                }
-
-                ?>-->
-                <table class="table center table-striped table-class " id="table-id">
+            <div class="billing">
+                <h2 style="text-align: center;"> List of Products</h2>
+                <table class="table center table-striped table-class" id="table-id" style="text-align: center;">
 
                     <tr>
                         <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Product type</th>
-                        <th>Brand</th>
-                        <th>Quantity</th>
+                        <th>Name</th>
                         <th>Price</th>
-                        <th>Description</th>
-                        <th>In stock</th>
+                        <th>Brand</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+
+
+
 
                     </tr>
+
+
+
                     <?php
+                    while ($rowSupp = mysqli_fetch_array($resultSupply)) {
+
+                        $sqlProduct = "SELECT * FROM product WHERE product_id = " . $rowSupp['product_id'] . " ";
+                        $resultProduct = mysqli_query($conn, $sqlProduct);
+                        $rowProduct = mysqli_fetch_array($resultProduct);
 
 
-                    $connection = mysqli_connect("localhost", "root", "", "ger_garage");
-                    if ($connection->connect_error) {
-                        die("Connection Failed:" . $connection->connect_error);
-                    }
-                    $sql = "SELECT * FROM product";
-                    $result = $connection->query($sql);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["product_ID"] . "</td><td>" . $row["product_name"] . "</td><td>" . $row["product_type"] . "</td><td>" . $row["brand"] . "</td><td>" . $row["product_quantity"] . "</td><td>" . $row["product_price"] . "</td><td>" . $row["product_description"] . "</td><td>" . $row["stockable"] . "</td></tr>";
-                        }
-                        echo "</table>";
-                    } else {
-                        echo "0 results";
-                    }
-                    $connection->close();
+
+
 
                     ?>
+
+                        <tr>
+                            <td><?php echo $rowProduct['product_id']; ?></td>
+                            <td><?php echo $rowProduct['product_name']; ?></td>
+                            <td><?php echo $rowProduct['product_price']; ?> </td>
+                            <td><?php echo $rowProduct['product_brand']; ?></td>
+                            <td><?php echo $rowProduct['product_type']; ?></td>
+                            <td><?php echo $rowProduct['product_quantity']; ?></td>
+
+
+
+
+                        </tr>
+
+                    <?php } ?>
+
+
                 </table>
+                <!--table table-striped table-class-->
 
 
 
             </div>
-            <!--./div employee-->
-        </section>
-        <!---./ staff list-->
-
-        <!--		Start Pagination -->
-        <div class='pagination-container'>
-            <nav>
-                <ul class="pagination ">
-                    <!-- the JS Function Will Add the Rows here -->
-                </ul>
-            </nav>
-        </div>
-        <!--pagination-container-->
-
-        <div class="rows_count ">Showing 11 to 20 of 91 entries</div>
-        <!--rows_count-->
-
-    </div>
 
 
 

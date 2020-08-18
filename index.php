@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--ERROR- ADICIONAR ANIMAÇÃO NAS LETRAS GER'S
-hoover não esta funcionando na nav bar"-->
+
 
 <head>
     <meta charset="utf-8">
@@ -45,13 +44,12 @@ hoover não esta funcionando na nav bar"-->
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
 
         <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home </a>
                     </li>
@@ -60,23 +58,15 @@ hoover não esta funcionando na nav bar"-->
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='us.php'> About Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='contact.php'> Contact </a>
+                        <a class="nav-link" href='contact.php'> Contact us</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href='booking.php'>Book our services</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='profile.php'>Profile</a>
-                    </li>
-
+ 
                     <li class=" nav-item">
-                        <a class="nav-link" href='#'>Login/Register</a>
+                        <a class="nav-link" href='login.php'>Member area</a>
                     </li>
                 </ul>
 

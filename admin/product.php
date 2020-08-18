@@ -1,6 +1,19 @@
+<?php
+include('../conn.php');
+
+if (!isset($_SESSION['isAdm'])) {
+    header("Location: ../login.php");
+}
+
+
+$sqlSupply = "SELECT * FROM product";
+$resultSupply = mysqli_query($conn, $sqlSupply);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-<!--ERROR- ideia quando eu insiro um produto e a quantidade no invoice é possivel ja subtrair automaticamente da tabela produtos?-->
+
 
 <head>
     <meta charset="utf-8">
@@ -10,8 +23,7 @@
 
     <title>Ger's Garage ADM</title>
 
-    <!--ERROR: não ets ainportando -->
-    <!--<link href="../css/admin.css" rel="stylesheet" type="text/css">-->
+
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/10f8e7de20.js" crossorigin="anonymous"></script>
@@ -25,85 +37,81 @@
 </head>
 
 <body>
-    <div class="btn_return">
-        <button onclick="window.location.href='../admin/stock.php';">
-        Go back
-      </button>
-    </div>
 
-    <form class="product">
-        <fieldset>
-            <!-- Form Name -->
-            <h1>New product</h1>
+    <body>
+        <div class="row">
 
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_id">Product ID</label>
-                <div class="col-md-4">
-                    <select id="product_id" name="product_id" class="form-control">
-                            <option value="1">Option one</option>
-                            <option value="2">Option two</option>
-                        </select>
-                </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_name">Product name</label>
-                <div class="col-md-4">
-                    <input id="product_name" name="product_name" type="text" placeholder="Product name" class="form-control input-md" style="width: 50%;">
-
-                </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_quantity">Product quantity</label>
-                <div class="col-md-4">
-                    <input id="product_quantity" name="product_quantity" type="text" placeholder="quantity" class="form-control input-md">
-
-                </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_price">Price</label>
-                <div class="col-md-4">
-                    <input id="product_price" name="product_price" type="text" placeholder="€ 00,00" class="form-control input-md">
-
-                </div>
-            </div>
-
-            <!-- Select Multiple -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_type">Product type</label>
-                <div class="col-md-4">
-                    <select id="product_type" name="product_type" class="form-control" multiple="multiple">
-                            <option value="1">Mechanical</option>
-                            <option value="2">Eletric</option>
-                            <option value="">painting</option>
-                            <option value="">Option two</option>
-                        </select>
-                </div>
-            </div>
-
-            <!-- Textarea -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_description">Description or extra info</label>
-                <div class="col-md-4">
-                    <textarea class="form-control" id="product_description" name="product_description">.....</textarea>
-                </div>
-            </div>
-
-            <!-- Button -->
             <div class="btn_return">
-                <label class="col-md-4 control-label" for="save"></label>
-                <div class="col-md-4">
-                    <button id="save" name="save" class="btn btn-info">Save</button>
-                </div>
+                <button onclick="window.location.href='../admin/dashboard.php';">Go back </button>
             </div>
-        </fieldset>
-    </form>
+
+        </div>
+        <section>
+
+
+
+            <section>
+                <div class="billing">
+                <h2 style="text-align: center;"> List of Product</h2>
+
+                    <table class="table center table-striped table-class" id="table-id" style="text-align: center;">
+
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Brand</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+                            <th>info</th>
+
+
+
+                        </tr>
+
+
+
+                        <?php
+                        while ($rowSupp = mysqli_fetch_array($resultProduct)) {
+
+                            $sqlProduct = "SELECT * FROM product WHERE product_id = " . $rowSupp['product_id'] . " ";
+                            $resultProduct = mysqli_query($conn, $sqlProduct);
+                            $rowProduct = mysqli_fetch_array($resultProduct);
+
+
+
+
+
+                        ?>
+
+                            <tr>
+                                <td><?php echo $rowStaff['product_id']; ?></td>
+                                <td><?php echo $rowStaff['product_name']; ?></td>
+                                <td><?php echo $rowStaff['product_price']; ?> </td>
+                                <td><?php echo $rowStaff['product_brand']; ?></td>
+                                <td><?php echo $rowStaff['product_type']; ?></td>
+                                <td><?php echo $rowStaff['product_quantity']; ?></td>
+                                <td><?php echo $rowStaff['info']; ?></td>
+
+
+
+                            </tr>
+
+                        <?php } ?>
+
+
+                    </table>
+                    <!--table table-striped table-class-->
+
+
+
+                </div>
+
+
+
+    </body>
+
+</html>
 
 </body>
 

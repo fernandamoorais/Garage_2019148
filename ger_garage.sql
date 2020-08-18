@@ -1,165 +1,218 @@
-CREATE TABLE `Payment` (
-  `payment_ID` INTEGER,
-  `serv_ordem` INTEGER(15),
-  `payment_parts` DECIMAL(10,2),
-  `Invoice` INTEGER(15),
-  `paymentt_serv` DECIMAL(10,2),
-  `payment_amount` DECIMAL(10,2),
-  `payment_date` DATE,
-  `other details` VARCHAR(300),
-  PRIMARY KEY (`payment_ID`),
-  KEY `Key` (`payment_parts`, `Invoice`, `paymentt_serv`, `payment_amount`, `payment_date`, `other details`)
-);
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 17-Ago-2020 às 23:42
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.3.6
 
-CREATE TABLE `service` (
-  `invoice` INTEGER(15),
-  `service_ID` INTEGER(5),
-  `vehicle_license` VARCHAR(15),
-  `service_name` VARCHAR(15),
-  `service_price` NUMERIC(19,0),
-  `service_comments` VARCHAR(300),
-  PRIMARY KEY (`invoice`, `service_ID`),
-  KEY `Key` (`service_name`, `service_price`, `service_comments`)
-);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-CREATE TABLE `Identify` (
-  `user_ID` INTEGER(10),
-  `staff_ID` INTEGER(4),
-  `ladm_ID` INTEGER(4),
-  `password` VARCHAR(70),
-  `password2` VARCHAR(70),
-  `last_login` DATETIME,
-  `is_adm_ID` ENUM('1','0'),
-  `is_user_ID` ENUM('1','0'),
-  `is_staff_ID` ENUM('1','0') ,
-  KEY `Key` (`password2`, `last_login`, `is_adm_ID`, `is_user_ID`, `is_staff_ID`)
-);
 
-CREATE TABLE `product` (
-  `product_ID` INTEGER(5),
-  `product_type` VARCHAR(30),
-  `product_name` VARCHAR(25),
-  `product_quantity` INTEGER,
-  `product_description` VARCHAR(100),
-  `product_price` DECIMAL(10,2),
-  `stockable` BOOLEAN,
-  PRIMARY KEY (`product_ID`, `product_type`),
-  KEY `Key` (`product_name`, `product_quantity`, `product_description`, `product_price`, `stockable`)
-);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `fer2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `booking`
+--
+
+CREATE TABLE `booking` (
+  `id_booking` int(7) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `id_vehicle` int(9) NOT NULL,
+  `date` date NOT NULL,
+  `slot` int(11) NOT NULL,
+  `id_employee` int(3) NOT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `id_user`, `id_vehicle`, `date`, `slot`, `id_employee`, `status`) VALUES
+(1, 4, 2, '2020-08-20', 2, 1, 1),
+(2, 4, 2, '2020-08-20', 4, 1, 1),
+(3, 4, 2, '2020-08-20', 3, 1, 1),
+(4, 4, 2, '2020-08-20', 4, 2, 1),
+(5, 4, 2, '2020-08-24', 1, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `employee`
+--
+
+CREATE TABLE `employee` (
+  `id_employee` int(5) NOT NULL,
+  `name` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `employee`
+--
+
+INSERT INTO `employee` (`id_employee`, `name`) VALUES
+(1, 'Conor Lyons'),
+(2, 'John Oconnell'),
+(3, 'Conor casey'),
+(4, 'Tibor');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `login`
+--
+
+CREATE TABLE `login` (
+  `id_login` int(5) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `pass` varchar(36) NOT NULL,
+  `isAdm` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `login`
+--
+
+INSERT INTO `login` (`id_login`, `id_user`, `login`, `pass`, `isAdm`) VALUES
+(1, 1, 'fernanda', '698dc19d489c4e4db73e28a713eab07b', 1),
+(2, 4, 'asd@asd.com', '698dc19d489c4e4db73e28a713eab07b', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user`
+--
 
 CREATE TABLE `user` (
-  `password` VARCHAR(70),
-  `login_user_ID` INTEGER(10),
-  `password2` VARCHAR(70),
-  `user_type` VARCHAR(25),
-  `usernameEmail` VARCHAR(100),
-  `first_name` VARCHAR(15),
-  `last_name` VARCHAR(30),
-  `phone` VARCHAR(30),
-  `birthday` DATE,
-  `address` VARCHAR(50),
-  `address2` VARCHAR(50),
-  `eircode` VARCHAR(15),
-  `info` VARCHAR(300),
-  PRIMARY KEY (`password`, `login_user_ID`),
-  KEY `key` (`password2`),
-  KEY `Key` (`user_type`, `usernameEmail`, `first_name`, `last_name`, `phone`, `birthday`, `address`, `address2`, `eircode`, `info`)
-);
+  `id_user` int(5) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `first_name` varchar(150) NOT NULL,
+  `last_name` varchar(150) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `birthday` date NOT NULL,
+  `address` text NOT NULL,
+  `address2` text NOT NULL,
+  `eircode` varchar(15) NOT NULL,
+  `info` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `staff` (
-  `staff_email` VARCHAR(100),
-  `staff_ID` INTEGER(10),
-  `password` VARCHAR(70),
-  `password2` VARCHAR(70),
-  `staff_name` VARCHAR(15),
-  `staff_second` VARCHAR(30),
-  `staff_address` VARCHAR(50),
-  `DOB` DATE,
-  `staff_phone` INTEGER(30),
-  `from_date` DATE,
-  `end_date` DATE,
-  `staff_type` VARCHAR(10),
-  `salary` NUMERIC(19,0),
-  `daily_hours` INTEGER(2),
-  PRIMARY KEY (`staff_email`, `staff_ID`),
-  KEY `Key` (`password`, `password2`, `staff_name`, `staff_second`, `DOB`, `staff_phone`, `from_date`, `end_date`, `staff_type`, `salary`, `daily_hours`),
-  KEY `key` (`staff_address`)
-);
+--
+-- Extraindo dados da tabela `user`
+--
 
-CREATE TABLE `ADM` (
-  `login_staff_ID` INTEGER(4),
-  `password` VARCHAR(70),
-  `e-mail` VARCHAR(100),
-  PRIMARY KEY (`login_staff_ID`, `password`),
-  KEY `Key` (`e-mail`)
-);
+INSERT INTO `user` (`id_user`, `email`, `first_name`, `last_name`, `phone`, `birthday`, `address`, `address2`, `eircode`, `info`) VALUES
+(4, 'asd@ase.com', 'fernanda', 'morais', '910602805', '1993-12-28', 'teste rua 1 ', 'teate rua 2', '191919', '');
 
-CREATE TABLE `Supplier` (
-  `supplier_ID` INTEGER,
-  `supplier_name` VARCHAR(45),
-  `supplier_phone` INTEGER,
-  `supplier_info` VARCHAR(200),
-  PRIMARY KEY (`supplier_ID`),
-  KEY `Key` (`supplier_name`, `supplier_phone`, `supplier_info`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE `Product_order` (
-  `product_ID` INTEGER,
-  `invoice` INTEGER,
-  `product_quantity` INTEGER,
-  `product_price` DECIMAL(10,2),
-  `ordered_at` DATETIME,
-  KEY `Key` (`product_quantity`, `product_price`, `ordered_at`)
-);
-
-CREATE TABLE `Supplying` (
-  `suppllier_ID` INTEGER,
-  `product_ID` INTEGER,
-  `quantity` INTEGER,
-  `price` DECIMAL(10,2),
-  `ordered_at` DATETIME,
-  `arrives_at` DATETIME,
-  `arrived` BOOLEAN,
-  KEY `Key` (`quantity`, `price`, `ordered_at`, `arrives_at`, `arrived`)
-);
+--
+-- Estrutura da tabela `vehicle`
+--
 
 CREATE TABLE `vehicle` (
-  `vehicle_lincense` VARCHAR(15),
-  `login_user_ID` INTEGER(10),
-  `vehicle_type` VARCHAR(15),
-  `vehicle_year` DATE,
-  `vehicle_model` VARCHAR(15),
-  `vehicle_color` VARCHAR(10),
-  `vehicle_engine` VARCHAR(15),
-  `vehicle_make` VARCHAR(25),
-  `adicional` VARCHAR(300),
-  PRIMARY KEY (`vehicle_lincense`),
-  KEY `Key` (`vehicle_type`, `vehicle_year`, `vehicle_color`, `vehicle_engine`, `vehicle_make`, `adicional`),
-  KEY `key` (`vehicle_model`)
-);
+  `id_vehicle` int(9) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `vehicle_type` varchar(150) NOT NULL,
+  `vehicle_year` int(4) NOT NULL,
+  `vehicle_model` varchar(150) NOT NULL,
+  `vehicle_color` varchar(150) NOT NULL,
+  `vehicle_engine` varchar(150) NOT NULL,
+  `vehicle_make` varchar(150) NOT NULL,
+  `vehicle_registration` varchar(50) NOT NULL,
+  `adicional` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Ref_Booking _Status` (
-  `status` VARCHAR(15),
-  `status_description` VARCHAR(100),
-  PRIMARY KEY (`status`),
-  KEY `Key` (`status_description`)
-);
+--
+-- Extraindo dados da tabela `vehicle`
+--
 
-CREATE TABLE `Stock` (
-  `stock_ID` INTEGER,
-  `product_id` INTEGER,
-  `quantity` INTEGER,
-  `update_at` DATETIME,
-  PRIMARY KEY (`stock_ID`, `product_id`),
-  KEY `Key` (`quantity`, `update_at`)
-);
+INSERT INTO `vehicle` (`id_vehicle`, `id_user`, `vehicle_type`, `vehicle_year`, `vehicle_model`, `vehicle_color`, `vehicle_engine`, `vehicle_make`, `vehicle_registration`, `adicional`) VALUES
+(2, 4, 'asdasd', 1222, 'Volkswagen', 'asdasd', 'asdasd', 'asdasd', 'teste', '');
 
-CREATE TABLE `Booking` (
-  `booking_ID` INT,
-  `status` VARCHAR(15),
-  `booking_date` DATE,
-  `other _details` VARCHAR(100),
-  PRIMARY KEY (`booking_ID`),
-  KEY `Key` (`booking_date`, `other _details`)
-);
+--
+-- Índices para tabelas despejadas
+--
 
+--
+-- Índices para tabela `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id_booking`);
+
+--
+-- Índices para tabela `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id_employee`);
+
+--
+-- Índices para tabela `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id_login`);
+
+--
+-- Índices para tabela `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Índices para tabela `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`id_vehicle`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id_booking` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id_employee` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `login`
+--
+ALTER TABLE `login`
+  MODIFY `id_login` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `vehicle`
+--
+ALTER TABLE `vehicle`
+  MODIFY `id_vehicle` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

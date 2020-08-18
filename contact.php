@@ -41,19 +41,18 @@
 
 <body>
 
-    <!-- Navigation BAR -->
-    <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
+      <!-- Navigation BAR -->
+      <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
 
         <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
                         <a class="nav-link" href="index.php">Home </a>
                     </li>
                     <li class="nav-item">
@@ -61,23 +60,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='us.php'> About Us</a>
-                    </li>
-
-                    <li class="nav-item active">
-                        <a class="nav-link" href='contact.php'> Contact </a>
+                        <a class="nav-link active" href='contact.php'> Contact us</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href='booking.php'>Book our services</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='profile.php'>Profile</a>
-                    </li>
-
+ 
                     <li class=" nav-item">
-                        <a class="nav-link" href='login.php'>Login/Register</a>
+                        <a class="nav-link" href='login.php'>Member area</a>
                     </li>
                 </ul>
 
@@ -152,8 +143,7 @@
 
                             <div class="contact_us">
                                 <p><i class="fa fa-clock fa-lg" aria-hidden="true"></i> Sunday: closed
-                                    <br> Monday - Wednesday: 9am -6 pm
-                                    <br> Thursday - Saturday: 8am - 5pm
+                                    <br> Monday - Saturday: 8am - 6pm
                                 </p>
                             </div>
 

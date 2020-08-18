@@ -1,4 +1,63 @@
-<?php include('server.php') ?>
+<?php
+include('conn.php');
+	$error = array();
+
+if(!empty($_POST)){
+	
+
+	
+	if(!empty($_POST['user'])){
+		$user = $_POST['user'];
+	}else{
+		$error[] = "User error";
+	}
+	
+	if(!empty($_POST['pass'])){
+		$pass = $_POST['pass'];
+	}else{
+		$error[] = "pass error";
+	}
+
+	if(count($error) == 0){
+		$sql = "SELECT pass, login, isAdm, id_login, id_user FROM login WHERE login = '".$user."' LIMIT 1";
+
+		$result = mysqli_query($conn, $sql);
+		$count = mysqli_num_rows($result);
+
+		if($count>0){
+			
+			$login = mysqli_fetch_assoc($result);
+			if($login['pass'] == md5($pass)){
+				echo "asdasd";
+				if($login['isAdm'] != 1){
+					$_SESSION['id_login'] = $login['id_login'];
+					$_SESSION['id_user'] = $login['id_user'];
+					$_SESSION['login'] = $login['login'];
+					header("Location: vehicle.php");
+				}else{
+					$_SESSION['isAdm'] = 1;
+					$_SESSION['id_login'] = $login['id_login'];
+					$_SESSION['id_user'] = $login['id_user'];
+					$_SESSION['login'] = $login['login'];
+					header("Location: admin/dashboard.php");
+				}
+			}else{
+				$error[] = "wrong pass";
+			}
+			
+		}else{
+			$error[] = "wrong login";
+		}
+	}
+}
+
+if(isset($_REQUEST['msg'])){
+	$error[] = $_REQUEST['msg'];
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,19 +149,18 @@
 <body>
 
 
-    <!-- Navigation BAR -->
-    <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
+       <!-- Navigation BAR -->
+   <nav class="navbar  navbar-expand-md navbar-dark bg-dark sticky-top">
         <!--md because its the breakpoint where it gonna change from the mobile to expanded nav-->
 
         <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-sm-center" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Home </a>
                     </li>
                     <li class="nav-item">
@@ -110,23 +168,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href='us.php'> About Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='contact.php'> Contact </a>
+                        <a class="nav-link" href='contact.php'> Contact us</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href='booking.php'>Book our services</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='profile.php'>Profile</a>
-                    </li>
-
+ 
                     <li class=" nav-item">
-                        <a class="nav-link active" href='#'>Login/register</a>
+                        <a class="nav-link active" href='login.php'>Member area</a>
                     </li>
                 </ul>
 
@@ -140,7 +190,16 @@
 
     <div class="cotn_principal">
         <div class="cont_centrar">
+		
+<?php if(count($error)>0){
+	
+	$errorMsg = implode("<br>",$error);
+?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong><br> <?php echo $errorMsg;?>
+</div>
 
+<?php } ?>
             <div class="cont_login">
                 <div class="cont_info_log_sign_up">
                     <div class="col_md_login">
@@ -158,7 +217,7 @@
 
                             <p></p>
 
-                            <button class="btn_sign_up" onclick="window.location.href='registration.php';">BECAME A MEMBER</button>
+                            <button class="btn_sign_up" onclick="window.location.href='registration.php';">BECOME A MEMBER</button>
                         </div>
                     </div>
                 </div>
@@ -177,9 +236,11 @@
                     <div class="cont_form_login">
                         <a href="#" onclick="ocultar_login_sign_up()"><i class="fas fa-times-circle"></i></a>
                         <h2>LOGIN</h2>
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
-                        <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+						<form action="login.php" method="post">
+							<input type="text" placeholder="Username" name="user" />
+							<input type="password" placeholder="Password" name="pass" />
+							<button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+						</form>
                     </div>
 
                     <div class="cont_form_sign_up">
